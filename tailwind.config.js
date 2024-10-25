@@ -1,13 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['home.html'],
+  content: [
+    './home/**/*.{home.html}', // ini untuk menghubungkan semua file HTML di dalam folder home
+    './src/**/*.html',  // jika ada file HTML di folder src
+    'models/home/home.html'
+  ],
   theme: {
     extend: {
       // ini untuk menambahkan fitur yang sudah dimiliki tailwind
       colors: {
         // beige_gw: "#FEF3E2",
-        // beige2_gw: "#FFEAC5",
-        // green_gw: "#0A6847",
+        yellow_gw: "#FEEC37",
+        green_gw: "#1C6758",
         // green_pastel: "#A5DD9B",
       },
 

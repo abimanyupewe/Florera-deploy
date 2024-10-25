@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../src/output.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Landing page Florera</title>
+  </head>
+  <body class="font-poppins">
+    <!-- hero section -->
+    <section>
+      <div class="relative">
+        <!-- Navigation -->
+        <!-- Header Start -->
+        <header
+          class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+        >
+          <div class="container mx-auto sm:px-16 md:px-8 lg:px-12">
+            <div class="flex items-center justify-between relative">
+              <!-- Element Kiri (Brand) -->
+              <div class="flex px-5">
+                <a
+                  href="#home"
+                  class="font-black text-lg text-white block py-6"
+                >
+                  FLORERA
+                </a>
+              </div>
+              <!-- Element Kanan (Navigation) -->
+              <div class="flex items-center px-5">
+                <!-- Hamburger Menu for Mobile -->
+                <button
+                  id="hamburger"
+                  name="hamburger"
+                  type="button"
+                  class="block absolute right-4 lg:hidden"
+                >
+                  <span
+                    class="hamburger-line transition duration-300 ease-in-out origin-top-left"
+                  ></span>
+                  <span
+                    class="hamburger-line transition duration-300 ease-in-out"
+                  ></span>
+                  <span
+                    class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"
+                  ></span>
+                </button>
+
+                <!-- Navbar for Larger Screens -->
+                <nav
+                  id="nav-menu"
+                  class="lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none hidden absolute py-5 bg-slate-600 shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full"
+                >
+                  <ul class="block lg:flex">
+                    <li class="group">
+                      <a
+                        href="#home"
+                        class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="group">
+                      <a
+                        href="#about_me"
+                        class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
+                        >About Me</a
+                      >
+                    </li>
+                    <li class="group">
+                      <a
+                        href="#project_me"
+                        class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
+                        >Project Me</a
+                      >
+                    </li>
+                    <li class="group">
+                      <a
+                        href="#colaborations"
+                        class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
+                        >Colab</a
+                      >
+                    </li>
+                    <li class="group">
+                      <a
+                        href="#contact"
+                        class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
+                        >Contact</a
+                      >
+                    </li>
+                    <!-- Tambahkan Login ke daftar untuk Mobile -->
+                    <li class="group lg:hidden">
+                      <a
+                        href="#login"
+                        class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
+                        >Login</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- Tombol Login untuk desktop -->
+              <a
+                href="#login"
+                class="text-base font-semibold bg-yellow_gw text-green_gw py-2 rounded-full ml-8 hover:text-white hover:bg-teal-500 transition hidden px-10 lg:block"
+                >Login
+              </a>
+            </div>
+          </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- Hero Section -->
+        <section
+          class="h-screen flex items-center justify-center bg-cover bg-center bg-green_gw padding"
+        >
+          <div class="flex flex-wrap">
+            <div
+              class="w-full px-4 lg:w-1/2 self-center text-center space-y-4 mt-28 md:mt-0"
+            >
+              <h1
+                class="text-xl font-bold text-neon_green lg:text-2xl text-white"
+              >
+                Dari <span class="text-yellow_gw">Alam</span>, Untuk
+                <span class="text-yellow_gw">Alam</span>.
+              </h1>
+              <p class="font-medium text-white">
+                Tumbuhkan Tanaman Sehat dengan <br />Pupuk Organik Berkualitas
+                dari Bahan Terbaik untuk Lingkungan yang Lebih Baik
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a
+                  href="#"
+                  class="text-base font-semibold bg-yellow_gw py-3 px-10 rounded-full text-green_gw hover:shadow-lg hover:bg-teal-500 hover:text-white hover:opacity-80 transition duration-200 ease-in-out"
+                >
+                  Course
+                </a>
+                <a
+                  href="#"
+                  class="text-base font-semibold bg-yellow_gw py-3 px-10 rounded-full text-green_gw hover:shadow-lg hover:bg-teal-500 hover:text-white hover:opacity-80 transition duration-200 ease-in-out"
+                >
+                  Shop
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="items-center absolute z-20 bottom-[30px] left-1/2 transform w-auto bg-yellow_gw rounded-lg shadow-md hover:shadow-lg sm:w-60 sm:p-6 md:flex md:bottom-[40px] md:w-auto md:space-x-10 md:px-10 p-4 px-16 hover:bg-teal-500"
+            >
+              <!-- Bagian Total Projects -->
+              <div class="text-center">
+                <h3
+                  id="total-projects"
+                  class="md:text-xl text-lg font-bold text-green_gw hover:text-white"
+                >
+                  0
+                </h3>
+              </div>
+              <div class="text-center">
+                <p class="md:text-sm text-xs font-semibold text-green_gw">
+                  Pupuk organik <br />dihasilkan
+                </p>
+              </div>
+            </div>
+
+            <!-- Bagian kanan: Informasi Utama -->
+            <div class="w-full px-4 lg:w-1/2 self-center">
+              <div
+                class="mt-8 relative lg:mt-9 lg:right-0 w-72 md:w-full sm:w-48"
+              >
+                <!-- Foto -->
+                <img
+                  src="../../src/assets/images/background/foto-hero-section.png"
+                  alt="Abimanyu Priyo Widagdo"
+                  class="ukuran-foto-hero-section mx-auto relative"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- hero section end-->
+
+    <!-- Infografis -->
+    <section id="infografis">
+      <div
+        class="flex flex-wrap"
+      >
+        
+      </div>
+    </section>
+    <!-- infografis end -->
+
+    <!-- script javascript -->
+    <script src="../../src/script/home.js"></script>
+  </body>
+</html>
