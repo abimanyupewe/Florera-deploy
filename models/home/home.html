@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind -->
     <link rel="stylesheet" href="../../src/output.css" />
 
+    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -108,7 +110,7 @@
               <!-- Tombol Login untuk desktop -->
               <a
                 href="#login"
-                class="text-base font-semibold bg-yellow_gw text-green_gw py-2 rounded-full ml-8 hover:text-white hover:bg-teal-500 transition hidden px-10 lg:block"
+                class="text-base font-semibold bg-green_pastel text-green_gw py-2 rounded-full ml-8 hover:text-white hover:bg-green_pastel hover:opacity-80 transition hidden px-10 lg:block"
                 >Login
               </a>
             </div>
@@ -137,13 +139,13 @@
               <div class="flex justify-center space-x-4">
                 <a
                   href="#"
-                  class="text-base font-semibold bg-yellow_gw py-3 px-10 rounded-full text-green_gw hover:shadow-lg hover:bg-teal-500 hover:text-white hover:opacity-80 transition duration-200 ease-in-out"
+                  class="text-base font-semibold bg-green_pastel py-3 px-10 rounded-full text-green_gw hover:shadow-lg hover:bg-green_pastel hover:text-white hover:opacity-80 transition duration-200 ease-in-out"
                 >
                   Course
                 </a>
                 <a
                   href="#"
-                  class="text-base font-semibold bg-yellow_gw py-3 px-10 rounded-full text-green_gw hover:shadow-lg hover:bg-teal-500 hover:text-white hover:opacity-80 transition duration-200 ease-in-out"
+                  class="text-base font-semibold bg-green_pastel py-3 px-10 rounded-full text-green_gw hover:shadow-lg hover:bg-green_pastel hover:text-white hover:opacity-80 transition duration-200 ease-in-out"
                 >
                   Shop
                 </a>
@@ -151,19 +153,16 @@
             </div>
 
             <div
-              class="items-center absolute z-20 bottom-[30px] left-1/2 transform w-auto bg-yellow_gw rounded-lg shadow-md hover:shadow-lg sm:w-60 sm:p-6 md:flex md:bottom-[40px] md:w-auto md:space-x-10 md:px-10 p-4 px-16 hover:bg-teal-500"
+              class="items-center absolute z-20 bottom-[30px] left-1/2 transform w-auto bg-green_pastel rounded-lg shadow-md hover:shadow-lg sm:w-60 sm:p-6 md:flex md:bottom-[40px] md:w-auto md:space-x-10 md:px-10 p-4 px-16 hover:bg-green_pastel hover:opacity-90 text-green_gw hover:text-white"
             >
               <!-- Bagian Total Projects -->
               <div class="text-center">
-                <h3
-                  id="total-projects"
-                  class="md:text-xl text-lg font-bold text-green_gw hover:text-white"
-                >
+                <h3 id="total-projects" class="md:text-xl text-lg font-bold">
                   0
                 </h3>
               </div>
               <div class="text-center">
-                <p class="md:text-sm text-xs font-semibold text-green_gw">
+                <p class="md:text-sm text-xs font-semibold">
                   Pupuk organik <br />dihasilkan
                 </p>
               </div>
@@ -188,15 +187,352 @@
     </section>
     <!-- hero section end-->
 
-    <!-- Infografis -->
-    <section id="infografis">
-      <div
-        class="flex flex-wrap"
-      >
-        
+    <!-- mision -->
+    <section id="infografis" class="pt-16 pb-16">
+      <div class="flex flex-col items-center">
+        <div class="relative w-full mx-auto">
+          <!-- Carousel Items -->
+          <div id="carousel" class="relative overflow-hidden text-center">
+            <h1 class="text-2xl font-semibold pt-6 pb-4 text-green_gw">
+              Our Mission
+            </h1>
+            <div class="flex transition-transform duration-500 items-center">
+              <!-- Slide 1 -->
+              <div class="w-full flex-shrink-0 flex justify-center">
+                <div class="h-64 w-96 flex items-center justify-center">
+                  <p class="text-base text-gray_gw">
+                    Berkomitmen untuk menghasilkan pupuk organik berkualitas
+                    tinggi dari bahan alami, yang mendukung pertumbuhan tanaman
+                    sehat dan menyuburkan tanah secara berkelanjutan.
+                  </p>
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="w-full flex-shrink-0 flex justify-center">
+                <div class="h-64 w-96 flex items-center justify-center">
+                  <p class="text-base px-4 text-gray_gw">
+                    Kami ingin mendorong lebih banyak orang untuk menanam,
+                    merawat, dan mencintai alam. Setiap produk yang kami
+                    tawarkan, baik pupuk maupun bibit, dibuat dengan penuh
+                    perhatian untuk mendukung ekosistem yang lebih sehat.
+                  </p>
+                </div>
+              </div>
+              <!-- Slide 3 -->
+              <div class="w-full flex-shrink-0 flex justify-center">
+                <div class="h-64 w-96 flex items-center justify-center">
+                  <p class="text-base px-4 text-gray_gw">
+                    Berkomitmen untuk menghasilkan pupuk organik berkualitas
+                    tinggi dari bahan alami, yang mendukung pertumbuhan tanaman
+                    sehat dan menyuburkan tanah secara berkelanjutan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="hidden md:block">
+            <button
+              onclick="prevSlide()"
+              class="absolute top-1/2 left-40 transform -translate-y-1/2 bg-green_gw text-white p-3 rounded-full shadow-md hover:bg-teal-500 hover:shadow-lg transition duration-200 ease-in-out"
+            >
+              ◀
+            </button>
+            <button
+              onclick="nextSlide()"
+              class="absolute top-1/2 right-40 transform -translate-y-1/2 bg-green_gw text-white p-3 rounded-full shadow-md hover:bg-teal-500 hover:shadow-lg transition duration-200 ease-in-out"
+            >
+              ▶
+            </button>
+          </div>
+
+          <!-- Dots Indicator -->
+          <div class="flex justify-center mt-4 space-x-2">
+            <button
+              onclick="goToSlide(0)"
+              class="dot w-3 h-3 rounded-full bg-gray-300"
+            ></button>
+            <button
+              onclick="goToSlide(1)"
+              class="dot w-3 h-3 rounded-full bg-gray-300"
+            ></button>
+            <button
+              onclick="goToSlide(2)"
+              class="dot w-3 h-3 rounded-full bg-gray-300"
+            ></button>
+          </div>
+        </div>
       </div>
     </section>
     <!-- infografis end -->
+
+    <!-- proses pembuatan produk -->
+    <section id="proses-pembuatan" class="pt-16 pb-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold text-center mb-10">
+          Proses Pembuatan Produk
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Step 1 -->
+          <div
+            class="relative cursor-pointer"
+            onclick="showDescription('Tahap 1: Pengumpulan Bahan Alami', 'Kami memilih bahan organik terbaik yang bebas dari bahan kimia...')"
+          >
+            <img
+              src="../../src/assets/images/pexels-sasha-kim-9413760.jpg"
+              alt="Tahap 1"
+              class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
+            >
+              <span class="text-white text-2xl">Tahap 1</span>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div
+            class="relative cursor-pointer"
+            onclick="showDescription('Tahap 2: Proses Fermentasi', 'Bahan-bahan alami difermentasi dalam waktu tertentu...')"
+          >
+            <img
+              src="../../src/assets/images/pexels-sasha-kim-9413760.jpg"
+              alt="Tahap 2"
+              class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
+            >
+              <span class="text-white text-2xl">Tahap 2</span>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div
+            class="relative cursor-pointer"
+            onclick="showDescription('Tahap 3: Penyaringan dan Pengemasan', 'Pupuk yang telah jadi kemudian disaring dan dikemas...')"
+          >
+            <img
+              src="../../src/assets/images/pexels-sasha-kim-9413760.jpg"
+              alt="Tahap 3"
+              class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
+            >
+              <span class="text-white text-2xl">Tahap 3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal untuk Deskripsi -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center"
+    >
+      <div class="bg-white p-6 rounded-lg max-w-md mx-auto shadow-lg">
+        <h3 id="modal-title" class="text-xl font-semibold mb-2"></h3>
+        <p id="modal-description" class="text-gray-700"></p>
+        <button
+          id="close"
+          class="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Tutup
+        </button>
+      </div>
+    </div>
+
+    <!-- proses pembuatan produk end -->
+
+    <!-- produk -->
+    <section></section>
+    <!-- produk end -->
+
+    <!-- kursus -->
+    <section></section>
+    <!-- kursus end -->
+
+    <!-- testimony -->
+    <section></section>
+    <!-- testimony end -->
+
+    <!-- our team -->
+    <section class="pt-20">
+      <div class="flex flex-wrap justify-center">
+        <div
+          class="relative px-20 pb-10 w-full max-w-5xl h-auto mx-auto overflow-hidden "
+        >
+          <div class="pb-10">
+            <h1 class="text-2xl font-semibold pt-6 pb-4 text-green_gw text-center">Our Teams</h1>
+          </div>
+          <!-- Wrapper Slide -->
+          <div
+            id="team-slider"
+            class="flex transition-transform duration-500 ease-out space-x-14"
+          >
+            <!-- Slide 1: Menampilkan 3 Anggota Tim -->
+            <div
+              class="w-full h-auto flex justify-around items-center bg-slate-100 space-x-14"
+            >
+              <!-- Anggota Tim 1 -->
+              <div class="relative group w-60 h-60">
+                <img
+                  src="../../src/assets/images/teams/Yola.jpg"
+                  alt="Team Member 1"
+                  class="w-full h-full shadow-lg object-cover rounded-2xl group-hover:scale-110 transition duration-300"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 group-hover:scale-110 rounded-2xl"
+                ></div>
+                <div
+                  class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
+                >
+                  <span class="text-white text-lg font-semibold"
+                    >Yola Pratika
+                  </span>
+                  <span class="text-white text-sm font-medium">
+                    Sekertaris
+                  </span>
+                </div>
+              </div>
+
+              <!-- Anggota Tim 2 -->
+              <div class="relative group w-60 h-60">
+                <img
+                  src="../../src/assets/images/teams/Yola.jpg"
+                  alt="Team Member 2"
+                  class="w-full h-full shadow-lg object-cover rounded-2xl group-hover:scale-110 transition duration-300"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 group-hover:scale-110 rounded-2xl"
+                ></div>
+                <div
+                  class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
+                >
+                  <span class="text-white text-lg font-semibold"
+                    >Emmanuel Kent Amadeo</span
+                  >
+                  <span class="text-white text-sm font-medium"> Ketua </span>
+                </div>
+              </div>
+
+              <!-- Anggota Tim 3 -->
+              <div class="relative group w-60 h-60">
+                <img
+                  src="../../src/assets/images/teams/Abim.jpg"
+                  alt="Team Member 3"
+                  class="w-full h-full shadow-lg object-cover rounded-2xl group-hover:scale-110 transition duration-300"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 group-hover:scale-110 rounded-2xl"
+                ></div>
+                <div
+                  class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
+                >
+                  <span class="text-white text-lg font-semibold"
+                    >Abimanyu Priyo Widagdo</span
+                  >
+                  <span class="text-white text-sm font-medium">
+                    Designner and Programmer
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Menampilkan 2 Anggota Tim -->
+            <div
+              class="w-full h-auto flex justify-around items-center bg-slate-100 space-x-14"
+            >
+              <!-- Anggota Tim 4 -->
+              <div class="relative group w-60 h-60">
+                <img
+                  src="../../src/assets/images/teams/Mario.jpg"
+                  alt="Team Member 4"
+                  class="w-full h-full shadow-lg object-cover rounded-2xl group-hover:scale-110 transition duration-300"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 group-hover:scale-110 rounded-2xl"
+                ></div>
+                <div
+                  class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
+                >
+                  <span class="text-white text-lg font-semibold"
+                    >Mario Yudha Pratama</span
+                  >
+                  <span class="text-white text-sm font-medium">
+                    Sosial Media
+                  </span>
+                </div>
+              </div>
+
+              <!-- Anggota Tim 5 -->
+              <div class="relative group w-60 h-60">
+                <img
+                  src="../../src/assets/images/teams/Yola.jpg"
+                  alt="Team Member 5"
+                  class="w-full h-full shadow-lg object-cover rounded-2xl group-hover:scale-110 transition duration-300"
+                />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 group-hover:scale-110 rounded-2xl"
+                ></div>
+                <div
+                  class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
+                >
+                  <span class="text-white text-lg font-semibold"
+                    >Ahmad Fadlillah
+                  </span>
+                  <span class="text-white text-sm font-medium"> Keuanga </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigasi Tombol -->
+          <div class="flex justify-evenly">
+            <button
+              onclick="prevSlide()"
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full ml-2"
+            >
+              ◀
+            </button>
+            <button
+              onclick="nextSlide()"
+              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full mr-2"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- our team end -->
+
+    <!-- footer -->
+    <section class="pt-20">
+      <div class="flex flex-wrap bg-slate-200">
+        <div class="w-full h-auto">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Exercitationem perspiciatis, unde obcaecati rerum laudantium
+            repudiandae non vitae totam nam sint quidem? Ut repellendus omnis
+            delectus voluptatem officia, quo adipisci nihil. Architecto in alias
+            consectetur numquam repudiandae ad quam doloribus, et sed nesciunt
+            voluptate expedita unde dolore possimus quos aliquid sint maiores
+            inventore quasi voluptas accusantium facere repellendus. Dicta, eius
+            ipsam. Harum iste neque dolores autem, voluptatum tempore sint
+            mollitia recusandae. Omnis tenetur illo, ullam in voluptates eaque
+            cumque quod rerum laudantium quisquam quia fugit quos officiis
+            voluptatum nisi et aliquid! Corporis animi enim temporibus, ab
+            saepe, distinctio eos labore sequi et, provident cumque? Cumque
+            corporis esse dolor! Tempora explicabo aperiam dolorum. Aliquid
+            laborum nobis tempora temporibus maiores magnam quas nostrum?
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- footer end -->
 
     <!-- script javascript -->
     <script src="../../src/script/home.js"></script>

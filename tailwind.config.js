@@ -9,10 +9,12 @@ module.exports = {
     extend: {
       // ini untuk menambahkan fitur yang sudah dimiliki tailwind
       colors: {
-        // beige_gw: "#FEF3E2",
-        yellow_gw: "#FEEC37",
-        green_gw: "#1C6758",
-        // green_pastel: "#A5DD9B",
+        // gray_gw: "#3C3D37",
+        gray_pudar_gw: "#F5F5F5",
+        gray_gw: "#D0D4CA",                                                    
+        yellow_gw: "#FFD700",
+        green_gw: "#294936",
+        green_pastel: "#C6D79D",
       },
 
       // font
