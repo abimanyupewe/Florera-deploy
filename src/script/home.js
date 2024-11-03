@@ -100,10 +100,10 @@ updateCarousel();
 
 // documentation
 const images = [
-  "../../src/assets/images/pexels-sasha-kim-9413760.jpg",
-  "../../src/assets/images/pexels-shvetsa-5830935.jpg",
-  "../../src/assets/images/pexels-greta-hoffman-7728970.jpg",
-  "../../src/assets/images/pexels-introspectivedsgn-10012860.jpg",
+  "src/assets/images/pexels-sasha-kim-9413760.jpg",
+  "src/assets/images/pexels-shvetsa-5830935.jpg",
+  "src/assets/images/pexels-greta-hoffman-7728970.jpg",
+  "src/assets/images/pexels-introspectivedsgn-10012860.jpg",
 ];
 let currentImageIndex = 0;
 let scale = 1;
