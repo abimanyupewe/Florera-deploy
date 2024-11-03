@@ -3,7 +3,7 @@ module.exports = {
   content: [
     // './home/**/*.{home.html}', // ini untuk menghubungkan semua file HTML di dalam folder home
     // './src/**/*.html',  // jika ada file HTML di folder src
-    'models/home/index.html'
+    'index.html'
   ],
   theme: {
     extend: {
