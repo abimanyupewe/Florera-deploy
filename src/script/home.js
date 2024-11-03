@@ -44,75 +44,244 @@ window.onload = animateProjectsCount; // Memulai animasi saat halaman dimuat
 
 // misi kami
 let currentSlide = 0;
-    const totalSlidesMisi = document.querySelectorAll("#carousel > div > div").length;
-    const carousel = document.querySelector("#carousel > div");
-    const dots = document.querySelectorAll(".dot");
+const totalSlidesMisi = document.querySelectorAll(
+  "#carousel > div > div"
+).length;
+const carousel = document.querySelector("#carousel > div");
+const dots = document.querySelectorAll(".dot");
 
-    function updateCarousel() {
-      const offset = currentSlide * -100;
-      carousel.style.transform = `translateX(${offset}%)`;
-      dots.forEach((dot, index) => {
-        dot.classList.toggle("bg-green_gw", index === currentSlide);
-        dot.classList.toggle("bg-gray-300", index !== currentSlide);
-      });
-    }
+function updateCarousel() {
+  const offset = currentSlide * -100;
+  carousel.style.transform = `translateX(${offset}%)`;
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("bg-green_gw", index === currentSlide);
+    dot.classList.toggle("bg-gray-300", index !== currentSlide);
+  });
+}
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlidesMisi;
-      updateCarousel();
-    }
+function nextSlidemisi() {
+  currentSlide = (currentSlide + 1) % totalSlidesMisi;
+  updateCarousel();
+}
 
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + totalSlidesMisi) % totalSlidesMisi;
-      updateCarousel();
-    }
+function prevSlidemisi() {
+  currentSlide = (currentSlide - 1 + totalSlidesMisi) % totalSlidesMisi;
+  updateCarousel();
+}
 
-    function goToSlide(index) {
-      currentSlide = index;
-      updateCarousel();
-    }
+function goToSlidemisi(index) {
+  currentSlide = index;
+  updateCarousel();
+}
 
-    updateCarousel();
+updateCarousel();
 
 // misi kami end
 
-// proses pembuatan
-function showDescription(title, description) {
-  document.getElementById('modal-title').textContent = title;
-  document.getElementById('modal-description').textContent = description;
-  document.getElementById('overlay').classList.remove('hidden'); // Menampilkan overlay dan modal
+// // proses pembuatan
+// function showDescription(title, description) {
+//   document.getElementById('modal-title').textContent = title;
+//   document.getElementById('modal-description').textContent = description;
+//   document.getElementById('overlay').classList.remove('hidden'); // Menampilkan overlay dan modal
+// }
+
+// // Menutup modal
+// document.getElementById('close').addEventListener('click', () => {
+//   document.getElementById('overlay').classList.add('hidden'); // Menyembunyikan overlay dan modal
+// });
+
+// // Menutup modal jika klik di luar konten modal
+// document.getElementById('overlay').addEventListener('click', (e) => {
+//   if (e.target === document.getElementById('overlay')) {
+//       document.getElementById('overlay').classList.add('hidden'); // Menyembunyikan overlay dan modal
+//   }
+// });
+// // proses pembuatan end
+
+// documentation
+const images = [
+  "../../src/assets/images/pexels-sasha-kim-9413760.jpg",
+  "../../src/assets/images/pexels-shvetsa-5830935.jpg",
+  "../../src/assets/images/pexels-greta-hoffman-7728970.jpg",
+  "../../src/assets/images/pexels-introspectivedsgn-10012860.jpg",
+];
+let currentImageIndex = 0;
+let scale = 1;
+let isDragging = false;
+let startX,
+  startY,
+  currentX = 0,
+  currentY = 0;
+
+function showImage(src) {
+  document.getElementById("mainImage").src = src;
 }
 
-// Menutup modal
-document.getElementById('close').addEventListener('click', () => {
-  document.getElementById('overlay').classList.add('hidden'); // Menyembunyikan overlay dan modal
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  showImage(images[currentImageIndex]);
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  showImage(images[currentImageIndex]);
+}
+
+// Open Modal
+function openModal(src) {
+  document.getElementById("imageModal").classList.remove("hidden");
+  document.getElementById("modalImage").src = src;
+  scale = 1;
+  currentX = currentY = 0;
+  document.getElementById(
+    "modalImage"
+  ).style.transform = `scale(${scale}) translate(0px, 0px)`;
+}
+
+// Close Modal
+function closeModal() {
+  document.getElementById("imageModal").classList.add("hidden");
+}
+
+// Zoom In Function
+function zoomIn() {
+  scale += 0.2;
+  updateTransform();
+}
+
+// Zoom Out Function
+function zoomOut() {
+  if (scale > 0.4) {
+    scale -= 0.2;
+    updateTransform();
+  }
+}
+
+function updateTransform() {
+  const modalImage = document.getElementById("modalImage");
+  modalImage.style.transform = `scale(${scale}) translate(${currentX}px, ${currentY}px)`;
+}
+
+// Drag Functionality
+const modalImage = document.getElementById("modalImage");
+
+modalImage.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.clientX - currentX;
+  startY = e.clientY - currentY;
+  e.preventDefault();
 });
 
-// Menutup modal jika klik di luar konten modal
-document.getElementById('overlay').addEventListener('click', (e) => {
-  if (e.target === document.getElementById('overlay')) {
-      document.getElementById('overlay').classList.add('hidden'); // Menyembunyikan overlay dan modal
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    currentX = e.clientX - startX;
+    currentY = e.clientY - startY;
+    updateTransform();
   }
 });
-// proses pembuatan end
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+// Touch events for mobile
+modalImage.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  const touch = e.touches[0];
+  startX = touch.clientX - currentX;
+  startY = touch.clientY - currentY;
+});
+
+document.addEventListener("touchmove", (e) => {
+  if (isDragging) {
+    const touch = e.touches[0];
+    currentX = touch.clientX - startX;
+    currentY = touch.clientY - startY;
+    updateTransform();
+  }
+});
+
+document.addEventListener("touchend", () => {
+  isDragging = false;
+});
+// documentation end
 
 // our team
 let currentIndex = 0;
-const slides = document.querySelectorAll('#team-slider > div');
+const slides = document.querySelectorAll("#team-slider > div");
 const totalSlidesTeam = slides.length;
 
 function updateSlidePosition() {
-  const slider = document.getElementById('team-slider');
+  const slider = document.getElementById("team-slider");
   slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-function nextSlide() {
+function nextSlideteam() {
   currentIndex = (currentIndex + 1) % totalSlidesTeam;
   updateSlidePosition();
 }
 
-function prevSlide() {
+function prevSlideteam() {
   currentIndex = (currentIndex - 1 + totalSlidesTeam) % totalSlidesTeam;
   updateSlidePosition();
 }
-  // our team
+// our team
+
+// kursus
+const courseSlider = document.getElementById("courseSlider");
+const cardWidth = courseSlider.querySelector(".w-72").offsetWidth + 24; // Adjust as necessary
+
+function nextSlideKursus() {
+  courseSlider.scrollBy({ left: cardWidth, behavior: "smooth" });
+}
+
+function prevSlideKursus() {
+  courseSlider.scrollBy({ left: -cardWidth, behavior: "smooth" });
+}
+// kursus end
+
+// produk
+const slider = document.getElementById('productSlider');
+let currentPosition = 0;
+const cardWidthProduk = 256; // lebar tiap card + margin
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPosition > 0) {
+        currentPosition--;
+        slider.style.transform = `translateX(-${currentPosition * cardWidthProduk}px)`;
+    }
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPosition < slider.childElementCount - 2) {
+        currentPosition++;
+        slider.style.transform = `translateX(-${currentPosition * cardWidthProduk}px)`;
+    }
+});
+
+function redirectToProduct(productId) {
+    window.location.href = `/product/${productId}`;
+}
+// produk end
+
+// // testimony
+const sliderTesti = document.getElementById('testimony-slider');
+  const nextButton = document.getElementById('btn-next-testi');
+  const prevButton = document.getElementById('btn-previous-testi');
+  let currentIndexTesti = 0;
+  const totalSlidesTesti = sliderTesti.children.length;
+
+  function updateSlider() {
+    sliderTesti.style.transform = `translateX(-${currentIndexTesti * 100}%)`;
+  }
+
+  nextButton.addEventListener('click', () => {
+    currentIndexTesti = (currentIndexTesti + 1) % totalSlidesTesti;
+    updateSlider();
+  });
+
+  prevButton.addEventListener('click', () => {
+    currentIndexTesti = (currentIndexTesti - 1 + totalSlidesTesti) % totalSlidesTesti;
+    updateSlider();
+  });
+// // testimony end

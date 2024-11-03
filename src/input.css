@@ -49,5 +49,28 @@
 }
 /* hero section */
 
-/* proses pembuatan */
-/* proses pembuatan end */
+/* documentation proses pembuatan */
+.zoomable {
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+.modal-content {
+  max-width: 70%; /* Modal lebih kecil, tidak full screen */
+  max-height: 70%;
+  overflow: hidden; /* Membatasi gambar agar tidak keluar dari modal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#modalImage {
+  transition: transform 0.3s ease;
+  max-width: 100%;
+  max-height: 100%;
+  transform-origin: center center;
+  cursor: grab;
+}
+#modalImage:active {
+  cursor: grabbing;
+}
+/* documentation proses pembuatan end */

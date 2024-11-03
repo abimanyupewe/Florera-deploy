@@ -13,6 +13,9 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- icons feather -->
+    <script src="https://unpkg.com/feather-icons"></script>
     <title>Landing page Florera</title>
   </head>
   <body class="font-poppins">
@@ -58,7 +61,7 @@
                 <!-- Navbar for Larger Screens -->
                 <nav
                   id="nav-menu"
-                  class="lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none hidden absolute py-5 bg-slate-600 shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full"
+                  class="lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none hidden absolute py-5 shadow-lg bg-green_gw opacity-70 rounded-lg max-w-[250px] w-full right-4 top-full"
                 >
                   <ul class="block lg:flex">
                     <li class="group">
@@ -86,8 +89,8 @@
                       <a
                         href="#colaborations"
                         class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
-                        >Shop </a
-                      >
+                        >Shop
+                      </a>
                     </li>
                     <li class="group">
                       <a
@@ -234,13 +237,13 @@
           <!-- Navigation Buttons -->
           <div class="hidden md:block">
             <button
-              onclick="prevSlide()"
+              onclick="prevSlidemisi()"
               class="absolute top-1/2 left-40 transform -translate-y-1/2 bg-green_gw text-white p-3 rounded-full shadow-md hover:bg-teal-500 hover:shadow-lg transition duration-200 ease-in-out"
             >
               ◀
             </button>
             <button
-              onclick="nextSlide()"
+              onclick="nextSlidemisi()"
               class="absolute top-1/2 right-40 transform -translate-y-1/2 bg-green_gw text-white p-3 rounded-full shadow-md hover:bg-teal-500 hover:shadow-lg transition duration-200 ease-in-out"
             >
               ▶
@@ -250,15 +253,15 @@
           <!-- Dots Indicator -->
           <div class="flex justify-center mt-4 space-x-2">
             <button
-              onclick="goToSlide(0)"
+              onclick="goToSlidemisi(0)"
               class="dot w-3 h-3 rounded-full bg-gray-300"
             ></button>
             <button
-              onclick="goToSlide(1)"
+              onclick="goToSlidemisi(1)"
               class="dot w-3 h-3 rounded-full bg-gray-300"
             ></button>
             <button
-              onclick="goToSlide(2)"
+              onclick="goToSlidemisi(2)"
               class="dot w-3 h-3 rounded-full bg-gray-300"
             ></button>
           </div>
@@ -267,116 +270,576 @@
     </section>
     <!-- infografis end -->
 
-    <!-- proses pembuatan produk -->
-    <section id="proses-pembuatan" class="pt-16 pb-16 bg-gray-100">
+    <!-- produk kami -->
+    <section class="py-10">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-semibold text-center mb-10">
-          Proses Pembuatan Produk
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Step 1 -->
-          <div
-            class="relative cursor-pointer"
-            onclick="showDescription('Tahap 1: Pengumpulan Bahan Alami', 'Kami memilih bahan organik terbaik yang bebas dari bahan kimia...')"
-          >
+          <h2 class="text-2xl font-semibold text-gray-700 mb-6">Produk Kami</h2>
+          <div class="relative max-w-6xl mx-auto overflow-hidden">
+              <!-- Slider Cards -->
+              <div
+                  id="productSlider"
+                  class="flex space-x-4 transition-transform duration-300"
+              >
+                  <!-- Product Card 1 -->
+                  <div
+                      class="bg-white p-4 rounded-lg shadow-md w-60 sm:w-64 md:w-72 cursor-pointer flex-shrink-0"
+                      onclick="redirectToProduct(1)"
+                  >
+                      <img
+                          src="https://via.placeholder.com/150"
+                          alt="Produk A"
+                          class="rounded-lg w-full h-40 object-cover mb-4"
+                      />
+                      <h3 class="text-xl font-semibold">Produk A</h3>
+                      <p class="text-gray-600 mt-2">
+                          Deskripsi singkat tentang Produk A.
+                      </p>
+                      <p class="text-green-500 font-semibold mt-2">Rp 100.000</p>
+                  </div>
+                  <!-- Tambahkan card lainnya dengan pola yang sama -->
+                  <!-- Product Card 2 -->
+                  <div
+                      class="bg-white p-4 rounded-lg shadow-md w-60 sm:w-64 md:w-72 cursor-pointer flex-shrink-0"
+                      onclick="redirectToProduct(2)"
+                  >
+                      <img
+                          src="https://via.placeholder.com/150"
+                          alt="Produk B"
+                          class="rounded-lg w-full h-40 object-cover mb-4"
+                      />
+                      <h3 class="text-xl font-semibold">Produk B</h3>
+                      <p class="text-gray-600 mt-2">
+                          Deskripsi singkat tentang Produk B.
+                      </p>
+                      <p class="text-green-500 font-semibold mt-2">Rp 150.000</p>
+                  </div>
+                  <!-- Product Card 3 -->
+                  <div
+                      class="bg-white p-4 rounded-lg shadow-md w-60 sm:w-64 md:w-72 cursor-pointer flex-shrink-0"
+                      onclick="redirectToProduct(3)"
+                  >
+                      <img
+                          src="https://via.placeholder.com/150"
+                          alt="Produk C"
+                          class="rounded-lg w-full h-40 object-cover mb-4"
+                      />
+                      <h3 class="text-xl font-semibold">Produk C</h3>
+                      <p class="text-gray-600 mt-2">
+                          Deskripsi singkat tentang Produk C.
+                      </p>
+                      <p class="text-green-500 font-semibold mt-2">Rp 200.000</p>
+                  </div>
+
+                  <!-- Product Card 3 -->
+                  <div
+                      class="bg-white p-4 rounded-lg shadow-md w-60 sm:w-64 md:w-72 cursor-pointer flex-shrink-0"
+                      onclick="redirectToProduct(3)"
+                  >
+                      <img
+                          src="https://via.placeholder.com/150"
+                          alt="Produk C"
+                          class="rounded-lg w-full h-40 object-cover mb-4"
+                      />
+                      <h3 class="text-xl font-semibold">Produk C</h3>
+                      <p class="text-gray-600 mt-2">
+                          Deskripsi singkat tentang Produk C.
+                      </p>
+                      <p class="text-green-500 font-semibold mt-2">Rp 200.000</p>
+                  </div>
+
+                  <!-- Product Card 3 -->
+                  <div
+                      class="bg-white p-4 rounded-lg shadow-md w-60 sm:w-64 md:w-72 cursor-pointer flex-shrink-0"
+                      onclick="redirectToProduct(3)"
+                  >
+                      <img
+                          src="https://via.placeholder.com/150"
+                          alt="Produk C"
+                          class="rounded-lg w-full h-40 object-cover mb-4"
+                      />
+                      <h3 class="text-xl font-semibold">Produk C</h3>
+                      <p class="text-gray-600 mt-2">
+                          Deskripsi singkat tentang Produk C.
+                      </p>
+                      <p class="text-green-500 font-semibold mt-2">Rp 200.000</p>
+                  </div>
+              </div>
+
+              <!-- Slider Buttons -->
+              <div class="absolute inset-y-0 left-0 flex items-center">
+                  <button
+                      id="prevBtn"
+                      class="p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300"
+                  >
+                      <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5 text-gray-700"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                      >
+                          <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M15 19l-7-7 7-7"
+                          />
+                      </svg>
+                  </button>
+              </div>
+              <div class="absolute inset-y-0 right-0 flex items-center">
+                  <button
+                      id="nextBtn"
+                      class="p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300"
+                  >
+                      <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5 text-gray-700"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                      >
+                          <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 5l7 7-7 7"
+                          />
+                      </svg>
+                  </button>
+              </div>
+          </div>
+
+          <!-- Button to Shop Page -->
+          <div class="mt-6 text-center">
+              <a
+                  href="/shop"
+                  class="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+                  >Go to Shop</a
+              >
+          </div>
+      </div>
+  </section>
+    <!-- produk kami end -->
+
+    <!-- about produk -->
+    <section
+      class="w-full max-w-4xl mx-auto p-8 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8"
+    >
+      <!-- Image on the Left -->
+      <div class="w-full md:w-1/3">
+        <img
+          src="../../src/assets/images/pexels-karolina-grabowska-4750385.jpg"
+          alt="Produk Tanaman"
+          class="w-full h-auto rounded-lg shadow-lg object-cover"
+        />
+      </div>
+
+      <!-- Product Information -->
+      <div class="w-full md:w-2/3">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Tentang Produk</h2>
+
+        <!-- Keunggulan Section -->
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold text-green-600 mb-2">
+            Keunggulan Produk:
+          </h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Mempercepat akar dan tunas baru.</li>
+            <li>Mempercepat pertumbuhan vegetatif dan generatif sekaligus.</li>
+            <li>Aman digunakan terhadap semua tanaman di semua musim.</li>
+            <li>Meningkatkan hasil panen secara alami dan aman.</li>
+            <li>
+              Mengandung nutrisi esensial yang membantu fotosintesis tanaman.
+            </li>
+            <li>Dapat dikombinasikan dengan pupuk makro atau mikro kimia.</li>
+          </ul>
+        </div>
+
+        <!-- Cara Pemakaian Section -->
+        <div>
+          <h3 class="text-xl font-semibold text-green-600 mb-2">
+            Cara Pemakaian:
+          </h3>
+          <ul class="list-decimal list-inside space-y-2 text-gray-700">
+            <li>Kocok terlebih dahulu sebelum digunakan.</li>
+            <li>Encerkan 25 ml per 1 liter air dan aduk hingga rata.</li>
+            <li>Semprotkan pada permukaan belakang daun dan batang tanaman.</li>
+            <li>
+              Waktu pengaplikasian terbaik adalah di pagi hari (07.00 - 10.00)
+              atau sore hari (16.00 - 18.00).
+            </li>
+            <li>
+              Simpan di tempat kering dan jauhkan dari jangkauan anak-anak.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- about produk end -->
+
+    <!-- kursus kami -->
+    <section class="w-full max-w-5xl mx-auto p-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8">Kursus Kami</h2>
+
+      <!-- Course Slider -->
+      <div class="relative">
+        <div
+          id="courseSlider"
+          class="flex overflow-x-auto space-x-6 scroll-smooth"
+        >
+          <!-- Course Card 1 -->
+          <div class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
             <img
-              src="../../src/assets/images/pexels-sasha-kim-9413760.jpg"
-              alt="Tahap 1"
-              class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              src="../../src/assets/images/pexels-greta-hoffman-7728970.jpg"
+              alt="Thumbnail Course 1"
+              class="w-full h-48 object-cover"
             />
-            <div
-              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
-            >
-              <span class="text-white text-2xl">Tahap 1</span>
+            <div class="p-4 text-left">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Judul Course 1
+              </h3>
+              <p class="text-gray-600 mt-2">
+                Deskripsi singkat course ini untuk memberikan gambaran tentang
+                materi yang akan dipelajari.
+              </p>
+              <div class="flex items-center mt-3 text-yellow-500">
+                <span>★★★★☆</span>
+                <span class="text-gray-500 text-sm ml-2">(4.5)</span>
+              </div>
+              <p class="text-gray-700 mt-2">
+                Mentor: <span class="font-medium">Nama Mentor 1</span>
+              </p>
+              <p class="text-green-600 font-bold mt-2">Rp 200.000</p>
+              <button
+                class="bg-blue-600 text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+              >
+                Beli
+              </button>
             </div>
           </div>
-          <!-- Step 2 -->
-          <div
-            class="relative cursor-pointer"
-            onclick="showDescription('Tahap 2: Proses Fermentasi', 'Bahan-bahan alami difermentasi dalam waktu tertentu...')"
-          >
+
+          <!-- Course Card 2 -->
+          <div class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
             <img
-              src="../../src/assets/images/pexels-sasha-kim-9413760.jpg"
-              alt="Tahap 2"
-              class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              src="../../src/assets/images/pexels-greta-hoffman-7728970.jpg"
+              alt="Thumbnail Course 2"
+              class="w-full h-48 object-cover"
             />
-            <div
-              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
-            >
-              <span class="text-white text-2xl">Tahap 2</span>
+            <div class="p-4 text-left">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Judul Course 2
+              </h3>
+              <p class="text-gray-600 mt-2">
+                Deskripsi singkat course ini untuk memberikan gambaran tentang
+                materi yang akan dipelajari.
+              </p>
+              <div class="flex items-center mt-3 text-yellow-500">
+                <span>★★★★☆</span>
+                <span class="text-gray-500 text-sm ml-2">(4.7)</span>
+              </div>
+              <p class="text-gray-700 mt-2">
+                Mentor: <span class="font-medium">Nama Mentor 2</span>
+              </p>
+              <p class="text-green-600 font-bold mt-2">Rp 250.000</p>
+              <button
+                class="bg-blue-600 text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+              >
+                Beli
+              </button>
             </div>
           </div>
-          <!-- Step 3 -->
-          <div
-            class="relative cursor-pointer"
-            onclick="showDescription('Tahap 3: Penyaringan dan Pengemasan', 'Pupuk yang telah jadi kemudian disaring dan dikemas...')"
-          >
+
+          <!-- Course Card 3 -->
+          <div class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
             <img
-              src="../../src/assets/images/pexels-sasha-kim-9413760.jpg"
-              alt="Tahap 3"
-              class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              src="../../src/assets/images/pexels-greta-hoffman-7728970.jpg"
+              alt="Thumbnail Course 3"
+              class="w-full h-48 object-cover"
             />
-            <div
-              class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
-            >
-              <span class="text-white text-2xl">Tahap 3</span>
+            <div class="p-4 text-left">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Judul Course 3
+              </h3>
+              <p class="text-gray-600 mt-2">
+                Deskripsi singkat course ini untuk memberikan gambaran tentang
+                materi yang akan dipelajari.
+              </p>
+              <div class="flex items-center mt-3 text-yellow-500">
+                <span>★★★★★</span>
+                <span class="text-gray-500 text-sm ml-2">(5.0)</span>
+              </div>
+              <p class="text-gray-700 mt-2">
+                Mentor: <span class="font-medium">Nama Mentor 3</span>
+              </p>
+              <p class="text-green-600 font-bold mt-2">Rp 300.000</p>
+              <button
+                class="bg-blue-600 text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+              >
+                Beli
+              </button>
             </div>
           </div>
+
+          <!-- Course Card 3 -->
+          <div class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
+            <img
+              src="../../src/assets/images/pexels-greta-hoffman-7728970.jpg"
+              alt="Thumbnail Course 3"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4 text-left">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Judul Course 3
+              </h3>
+              <p class="text-gray-600 mt-2">
+                Deskripsi singkat course ini untuk memberikan gambaran tentang
+                materi yang akan dipelajari.
+              </p>
+              <div class="flex items-center mt-3 text-yellow-500">
+                <span>★★★★★</span>
+                <span class="text-gray-500 text-sm ml-2">(5.0)</span>
+              </div>
+              <p class="text-gray-700 mt-2">
+                Mentor: <span class="font-medium">Nama Mentor 3</span>
+              </p>
+              <p class="text-green-600 font-bold mt-2">Rp 300.000</p>
+              <button
+                class="bg-blue-600 text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+              >
+                Beli
+              </button>
+            </div>
+          </div>
+
+          <!-- Course Card 3 -->
+          <div class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
+            <img
+              src="../../src/assets/images/pexels-greta-hoffman-7728970.jpg"
+              alt="Thumbnail Course 3"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4 text-left">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Judul Course 3
+              </h3>
+              <p class="text-gray-600 mt-2">
+                Deskripsi singkat course ini untuk memberikan gambaran tentang
+                materi yang akan dipelajari.
+              </p>
+              <div class="flex items-center mt-3 text-yellow-500">
+                <span>★★★★★</span>
+                <span class="text-gray-500 text-sm ml-2">(5.0)</span>
+              </div>
+              <p class="text-gray-700 mt-2">
+                Mentor: <span class="font-medium">Nama Mentor 3</span>
+              </p>
+              <p class="text-green-600 font-bold mt-2">Rp 300.000</p>
+              <button
+                class="bg-blue-600 text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+              >
+                Beli
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button
+          onclick="prevSlideKursus()"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+        >
+          ‹
+        </button>
+        <button
+          onclick="nextSlideKursus()"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+        >
+          ›
+        </button>
+      </div>
+
+      <!-- View All Courses Button -->
+      <button
+        class="bg-green-600 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-green-700 transition-colors duration-300 mt-8"
+      >
+        Lihat Semua Course
+      </button>
+    </section>
+    <!-- kursus kami end -->
+
+    <!-- testimony -->
+    <section id="testimony" class="bg-gray-100 py-12">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-semibold text-gray-800">What Our Customers Say</h2>
+        <p class="text-gray-600 mt-4">Hear directly from people who have used our products</p>
+      </div>
+      
+      <!-- Testimonial Slider -->
+      <div class="relative max-w-4xl mx-auto px-6 mt-8 overflow-hidden">
+        <!-- Slider Container -->
+        <div id="testimony-slider" class="flex transition-transform duration-300">
+          <!-- Slide 1 -->
+          <div class="min-w-full flex flex-col items-center">
+            <img src="https://via.placeholder.com/100" alt="Customer 1" class="rounded-full w-20 h-20 mb-4">
+            <p class="text-gray-700">"Produk Florera sangat membantu saya dalam berkebun! Kursus yang ditawarkan juga sangat informatif."</p>
+            <span class="mt-2 font-semibold text-gray-800">- Alex Rahardian</span>
+          </div>
+          <!-- Slide 2 -->
+          <div class="min-w-full flex flex-col items-center">
+            <img src="https://via.placeholder.com/100" alt="Customer 2" class="rounded-full w-20 h-20 mb-4">
+            <p class="text-gray-700">"Layanan Florera memberikan hasil terbaik untuk tanaman saya, rekomendasi pupuknya sangat tepat."</p>
+            <span class="mt-2 font-semibold text-gray-800">- Bella Andini</span>
+          </div>
+          <!-- Slide 3 -->
+          <div class="min-w-full flex flex-col items-center">
+            <img src="https://via.placeholder.com/100" alt="Customer 3" class="rounded-full w-20 h-20 mb-4">
+            <p class="text-gray-700">"Bibit yang disediakan Florera berkualitas tinggi, sangat cocok untuk pemula dan yang sudah berpengalaman."</p>
+            <span class="mt-2 font-semibold text-gray-800">- Carlos Wijaya</span>
+          </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between items-center mt-4">
+          <button id="btn-previous-testi" class="p-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button id="btn-next-testi" class="p-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- testimony end -->
+
+    <!-- proses Documentation produk -->
+    <section class="w-full bg-slate-100">
+      <div class="max-w-4xl mx-auto p-4">
+        <div class="pb-10">
+          <h1
+            class="text-2xl font-semibold pt-6 pb-4 text-green_gw text-center"
+          >
+            Documentation
+          </h1>
+        </div>
+        <div class="relative px-10">
+          <!-- Main Image / Video -->
+          <div class="w-full overflow-hidden">
+            <img
+              id="mainImage"
+              src="../../src/assets/images/pexels-sasha-kim-9413760.jpg"
+              alt="Documentation Image"
+              class="w-full h-96 object-cover zoomable rounded-lg"
+              onclick="openModal(this.src)"
+            />
+          </div>
+
+          <!-- Slider Controls -->
+          <button
+            onclick="prevImage()"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+          >
+            ‹
+          </button>
+          <button
+            onclick="nextImage()"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+          >
+            ›
+          </button>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="mt-4 flex justify-center space-x-2">
+          <img
+            src="../../src/assets/images/pexels-sasha-kim-9413760.jpg"
+            alt="Thumbnail"
+            onclick="showImage('../../src/assets/images/pexels-sasha-kim-9413760.jpg')"
+            class="w-20 h-20 object-cover cursor-pointer border-2 border-transparent hover:border-blue-500 rounded-md"
+          />
+          <img
+            src="../../src/assets/images/pexels-shvetsa-5830935.jpg"
+            alt="Thumbnail"
+            onclick="showImage('../../src/assets/images/pexels-shvetsa-5830935.jpg')"
+            class="w-20 h-20 object-cover cursor-pointer border-2 border-transparent hover:border-blue-500 rounded-md"
+          />
+          <img
+            src="../../src/assets/images/pexels-greta-hoffman-7728970.jpg"
+            alt="Thumbnail"
+            onclick="showImage('../../src/assets/images/pexels-greta-hoffman-7728970.jpg')"
+            class="w-20 h-20 object-cover cursor-pointer border-2 border-transparent hover:border-blue-500 rounded-md"
+          />
+          <img
+            src="../../src/assets/images/pexels-introspectivedsgn-10012860.jpg"
+            alt="Thumbnail"
+            onclick="showImage('../../src/assets/images/pexels-introspectivedsgn-10012860.jpg')"
+            class="w-20 h-20 object-cover cursor-pointer border-2 border-transparent hover:border-blue-500 rounded-md"
+          />
         </div>
       </div>
     </section>
 
-    <!-- Modal untuk Deskripsi -->
+    <!-- Modal Overlay -->
     <div
-      id="overlay"
-      class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center"
+      id="imageModal"
+      class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center"
     >
-      <div class="bg-white p-6 rounded-lg max-w-md mx-auto shadow-lg">
-        <h3 id="modal-title" class="text-xl font-semibold mb-2"></h3>
-        <p id="modal-description" class="text-gray-700"></p>
-        <button
-          id="close"
-          class="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Tutup
-        </button>
+      <div class="modal-content relative rounded-lg shadow-lg">
+        <img id="modalImage" src="" class="transform scale-1" />
+
+        <!-- Zoom Controls -->
+        <div class="absolute top-4 left-4">
+          <button
+            onclick="closeModal()"
+            class="bg-red-500 text-white p-2 rounded-md"
+          >
+            ×
+          </button>
+        </div>
+        <div class="absolute bottom-4 right-4 flex space-x-2">
+          <button
+            onclick="zoomIn()"
+            class="bg-blue-500 text-white p-2 rounded-md"
+          >
+            +
+          </button>
+          <button
+            onclick="zoomOut()"
+            class="bg-blue-500 text-white p-2 rounded-md"
+          >
+            –
+          </button>
+        </div>
       </div>
     </div>
-
     <!-- proses pembuatan produk end -->
-
-    <!-- produk -->
-    <section></section>
-    <!-- produk end -->
-
-    <!-- kursus -->
-    <section></section>
-    <!-- kursus end -->
-
-    <!-- testimony -->
-    <section></section>
-    <!-- testimony end -->
 
     <!-- our team -->
     <section class="pt-20">
-      <div class="flex flex-wrap justify-center">
+      <div class="justify-center">
+        <div class="pb-4">
+          <h1 class="text-2xl font-semibold pt-6 text-green_gw text-center">
+            Our Teams
+          </h1>
+        </div>
         <div
-          class="relative px-20 pb-10 w-full max-w-5xl h-auto mx-auto overflow-hidden "
+          class="relative px-4 md:px-20 p-10 w-full max-w-5xl h-auto mx-auto overflow-hidden"
         >
-          <div class="pb-10">
-            <h1 class="text-2xl font-semibold pt-6 pb-4 text-green_gw text-center">Our Teams</h1>
-          </div>
           <!-- Wrapper Slide -->
           <div
             id="team-slider"
-            class="flex transition-transform duration-500 ease-out space-x-14"
+            class="flex transition-transform duration-500 ease-out space-x-6 md:space-x-14"
           >
             <!-- Slide 1: Menampilkan 3 Anggota Tim -->
             <div
-              class="w-full h-auto flex justify-around items-center  space-x-14"
+              class="w-full h-auto flex justify-around items-center space-x-4 md:space-x-14"
             >
               <!-- Anggota Tim 1 -->
-              <div class="relative group w-60 h-60">
+              <div class="relative group w-40 h-40 md:w-60 md:h-60">
                 <img
                   src="../../src/assets/images/teams/Yola.jpg"
                   alt="Team Member 1"
@@ -388,17 +851,17 @@
                 <div
                   class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
                 >
-                  <span class="text-white text-lg font-semibold"
+                  <span class="text-white text-sm md:text-lg font-semibold"
                     >Yola Pratika
                   </span>
-                  <span class="text-white text-sm font-medium">
+                  <span class="text-white text-xs md:text-sm font-medium">
                     Sekertaris
                   </span>
                 </div>
               </div>
 
               <!-- Anggota Tim 2 -->
-              <div class="relative group w-60 h-60">
+              <div class="relative group w-40 h-40 md:w-60 md:h-60">
                 <img
                   src="../../src/assets/images/teams/Kent.jpg"
                   alt="Team Member 2"
@@ -410,15 +873,17 @@
                 <div
                   class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
                 >
-                  <span class="text-white text-lg font-semibold"
+                  <span class="text-white text-sm md:text-lg font-semibold"
                     >Emmanuel Kent Amadeo</span
                   >
-                  <span class="text-white text-sm font-medium"> Ketua </span>
+                  <span class="text-white text-xs md:text-sm font-medium">
+                    Ketua
+                  </span>
                 </div>
               </div>
 
               <!-- Anggota Tim 3 -->
-              <div class="relative group w-60 h-60">
+              <div class="relative group w-40 h-40 md:w-60 md:h-60">
                 <img
                   src="../../src/assets/images/teams/Abim.jpg"
                   alt="Team Member 3"
@@ -430,10 +895,10 @@
                 <div
                   class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
                 >
-                  <span class="text-white text-lg font-semibold"
+                  <span class="text-white text-sm md:text-lg font-semibold"
                     >Abimanyu Priyo Widagdo</span
                   >
-                  <span class="text-white text-sm font-medium">
+                  <span class="text-white text-xs md:text-sm font-medium">
                     Designner and Programmer
                   </span>
                 </div>
@@ -442,10 +907,10 @@
 
             <!-- Slide 2: Menampilkan 2 Anggota Tim -->
             <div
-              class="w-full h-auto flex justify-around items-center bg-slate-100 space-x-14"
+              class="w-full h-auto flex justify-around items-center space-x-4 md:space-x-14"
             >
               <!-- Anggota Tim 4 -->
-              <div class="relative group w-60 h-60">
+              <div class="relative group w-40 h-40 md:w-60 md:h-60">
                 <img
                   src="../../src/assets/images/teams/Mario.jpg"
                   alt="Team Member 4"
@@ -457,17 +922,17 @@
                 <div
                   class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
                 >
-                  <span class="text-white text-lg font-semibold"
+                  <span class="text-white text-sm md:text-lg font-semibold"
                     >Mario Yudha Pratama</span
                   >
-                  <span class="text-white text-sm font-medium">
+                  <span class="text-white text-xs md:text-sm font-medium">
                     Sosial Media
                   </span>
                 </div>
               </div>
 
               <!-- Anggota Tim 5 -->
-              <div class="relative group w-60 h-60">
+              <div class="relative group w-40 h-40 md:w-60 md:h-60">
                 <img
                   src="../../src/assets/images/teams/Afad.jpg"
                   alt="Team Member 5"
@@ -479,10 +944,12 @@
                 <div
                   class="absolute inset-0 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition duration-300 px-6"
                 >
-                  <span class="text-white text-lg font-semibold"
+                  <span class="text-white text-sm md:text-lg font-semibold"
                     >Ahmad Fadlillah
                   </span>
-                  <span class="text-white text-sm font-medium"> Keuangam </span>
+                  <span class="text-white text-xs md:text-sm font-medium">
+                    Keuangam
+                  </span>
                 </div>
               </div>
             </div>
@@ -491,16 +958,16 @@
           <!-- Navigasi Tombol -->
           <div class="flex justify-evenly">
             <button
-              onclick="prevSlide()"
-              class="absolute left-0 top-60 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full ml-2"
+              onclick="prevSlideteam()"
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
             >
-              ◀
+              ‹
             </button>
             <button
-              onclick="nextSlide()"
-              class="absolute right-0 top-60 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full mr-2"
+              onclick="nextSlideteam()"
+              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
             >
-              ▶
+              ›
             </button>
           </div>
         </div>
@@ -511,29 +978,94 @@
 
     <!-- footer -->
     <section class="pt-20">
-      <div class="flex flex-wrap bg-slate-200">
-        <div class="w-full h-auto">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Exercitationem perspiciatis, unde obcaecati rerum laudantium
-            repudiandae non vitae totam nam sint quidem? Ut repellendus omnis
-            delectus voluptatem officia, quo adipisci nihil. Architecto in alias
-            consectetur numquam repudiandae ad quam doloribus, et sed nesciunt
-            voluptate expedita unde dolore possimus quos aliquid sint maiores
-            inventore quasi voluptas accusantium facere repellendus. Dicta, eius
-            ipsam. Harum iste neque dolores autem, voluptatum tempore sint
-            mollitia recusandae. Omnis tenetur illo, ullam in voluptates eaque
-            cumque quod rerum laudantium quisquam quia fugit quos officiis
-            voluptatum nisi et aliquid! Corporis animi enim temporibus, ab
-            saepe, distinctio eos labore sequi et, provident cumque? Cumque
-            corporis esse dolor! Tempora explicabo aperiam dolorum. Aliquid
-            laborum nobis tempora temporibus maiores magnam quas nostrum?
-          </p>
+      <div class="flex flex-wrap bg-green_gw px-10 pt-10 pb-4">
+        <div class="flex flex-row w-full gap-x-10">
+          <!-- navigation -->
+          <div class="w-auto h-auto p-10">
+            <ul>
+              <p class="pb-2 font-semibold text-lg text-white">Navigation</p>
+              <li class="pt-2">
+                <a
+                  class="hover:underline hover:text-yellow_gw text-slate-300"
+                  href=""
+                  >Home</a
+                >
+              </li>
+              <li class="pt-2">
+                <a
+                  class="hover:underline hover:text-yellow_gw text-slate-300"
+                  href=""
+                  >Documentation</a
+                >
+              </li>
+              <li class="pt-2">
+                <a
+                  class="hover:underline hover:text-yellow_gw text-slate-300"
+                  href=""
+                  >Course</a
+                >
+              </li>
+              <li class="pt-2">
+                <a
+                  class="hover:underline hover:text-yellow_gw text-slate-300"
+                  href=""
+                  >Shop</a
+                >
+              </li>
+              <li class="pt-2">
+                <a
+                  class="hover:underline hover:text-yellow_gw text-slate-300"
+                  href=""
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- support -->
+          <div class="w-auto h-auto p-10">
+            <ul>
+              <p class="pb-2 font-semibold text-lg text-white">Support</p>
+              <li class="pt-2">
+                <a
+                  class="hover:underline hover:text-yellow_gw text-slate-300"
+                  href=""
+                  >Whatsapp</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- about -->
+          <div class="w-auto h-auto p-10">
+            <ul>
+              <p class="pb-2 font-semibold text-lg text-white">About</p>
+              <li class="pt-2 flex flex-row gap-x-2">
+                <i data-feather="mail" class="text-slate-300"></i>
+                <a
+                  class="hover:underline hover:text-yellow_gw text-slate-300"
+                  href=""
+                  >florera.id@gmail.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- copyrigth -->
+        <div
+          class="w-full justify-center items-center text-center pt-10 px-10 text-white"
+        >
+          <hr class="w-full" />
+          <p class="pt-4">Go Green with &copy;Florera 2024</p>
         </div>
       </div>
     </section>
     <!-- footer end -->
 
+    <!-- icons feather -->
+    <script>
+      feather.replace();
+    </script>
     <!-- script javascript -->
     <script src="../../src/script/home.js"></script>
   </body>
