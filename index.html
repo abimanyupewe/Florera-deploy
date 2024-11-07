@@ -31,6 +31,7 @@
             <div class="flex items-center justify-between relative">
               <!-- Element Kiri (Brand) -->
               <div class="flex px-5">
+                <img class="w-20 h-auto" src="src/assets/images/logo/logo.png" alt="">
                 <a
                   href="#home"
                   class="font-black text-lg text-white block py-6"
@@ -73,30 +74,30 @@
                     </li>
                     <li class="group">
                       <a
-                        href="#about_me"
+                        href="#shop"
                         class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
-                        >Documentation</a
+                        >Shop</a
                       >
                     </li>
                     <li class="group">
                       <a
-                        href="#project_me"
+                        href="#course"
                         class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
                         >Course</a
                       >
                     </li>
                     <li class="group">
                       <a
-                        href="#colaborations"
+                        href="#testimonial"
                         class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
-                        >Shop
+                        >Testimonial
                       </a>
                     </li>
                     <li class="group">
                       <a
-                        href="#contact"
+                        href="#about_us"
                         class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
-                        >Contact</a
+                        >About Us</a
                       >
                     </li>
                     <!-- Tambahkan Login ke daftar untuk Mobile -->
@@ -1095,10 +1096,10 @@
 
     <!-- footer -->
     <section class="pt-20">
-      <div class="flex flex-wrap bg-green_gw px-10 pt-10 pb-4">
-        <div class="flex flex-row w-full gap-x-10">
-          <!-- navigation -->
-          <div class="w-auto h-auto p-10">
+      <div class="flex flex-wrap bg-green_gw px-5 md:px-10 pt-10 pb-4">
+        <div class="flex flex-col md:flex-row w-full gap-y-5 md:gap-y-0 gap-x-10">
+          <!-- navigation (hidden on mobile) -->
+          <div class="w-full md:w-auto h-auto p-5 md:p-10 hidden md:block">
             <ul>
               <p class="pb-2 font-semibold text-lg text-white">Navigation</p>
               <li class="pt-2">
@@ -1112,7 +1113,7 @@
                 <a
                   class="hover:underline hover:text-yellow_gw text-slate-300"
                   href=""
-                  >Documentation</a
+                  >Product</a
                 >
               </li>
               <li class="pt-2">
@@ -1138,9 +1139,9 @@
               </li>
             </ul>
           </div>
-
+    
           <!-- support -->
-          <div class="w-auto h-auto p-10">
+          <div class="w-full md:w-auto h-auto p-5 md:p-10">
             <ul>
               <p class="pb-2 font-semibold text-lg text-white">Support</p>
               <li class="pt-2">
@@ -1152,12 +1153,12 @@
               </li>
             </ul>
           </div>
-
+    
           <!-- about -->
-          <div class="w-auto h-auto p-10">
+          <div class="w-full md:w-auto h-auto p-5 md:p-10">
             <ul>
               <p class="pb-2 font-semibold text-lg text-white">About</p>
-              <li class="pt-2 flex flex-row gap-x-2">
+              <li class="pt-2 flex items-center gap-x-2">
                 <i data-feather="mail" class="text-slate-300"></i>
                 <a
                   class="hover:underline hover:text-yellow_gw text-slate-300"
@@ -1165,7 +1166,7 @@
                   >florera.id@gmail.com</a
                 >
               </li>
-              <li class="pt-2 flex flex-row gap-x-2">
+              <li class="pt-2 flex items-center gap-x-2">
                 <i data-feather="instagram" class="text-slate-300"></i>
                 <a
                   class="hover:underline hover:text-yellow_gw text-slate-300"
@@ -1173,7 +1174,7 @@
                   >florera.id</a
                 >
               </li>
-              <li class="pt-2 flex flex-row gap-x-2">
+              <li class="pt-2 flex items-center gap-x-2">
                 <i data-feather="phone" class="text-slate-300"></i>
                 <a
                   class="hover:underline hover:text-yellow_gw text-slate-300"
@@ -1181,7 +1182,7 @@
                   >+62 857 2424 2004</a
                 >
               </li>
-              <li class="pt-2 flex flex-row gap-x-2">
+              <li class="pt-2 flex items-center gap-x-2">
                 <i data-feather="map-pin" class="text-slate-300"></i>
                 <a
                   class="hover:underline hover:text-yellow_gw text-slate-300"
@@ -1191,17 +1192,15 @@
               </li>
             </ul>
           </div>
-
+    
           <!-- subscribe -->
-          <div class="w-auto h-auto p-10">
+          <div class="w-full md:w-auto h-auto p-5 md:p-10">
             <ul>
-              <p class="pb-2 font-semibold text-lg text-white">Subscribe</p>
+              <p class="pb-2 font-semibold text-lg text-white">Subscribe Flokers</p>
               <li class="pt-2">
-                <div class="w-96">
-                  <p class="text-slate-300 text-justify" href="">
-                    Tetap update dengan tren berkebun terbaru dan produk
-                    Florera! Daftar newsletter kami dan dapatkan informasi
-                    eksklusif langsung ke email Anda.
+                <div class="w-full md:w-96">
+                  <p class="text-slate-300 text-justify">
+                    Tetap update dengan tren berkebun terbaru dan produk Florera! Daftar newsletter kami dan dapatkan informasi eksklusif langsung ke email Anda.
                   </p>
                   <form
                     class="mt-5 max-w-md mx-auto flex flex-col md:flex-row items-center space-y-4 md:space-y-0"
@@ -1214,13 +1213,13 @@
                     />
                     <button
                       type="submit"
-                      class="absolute right-20 w-full md:w-auto px-6 py-2 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 transition duration-200"
+                      class="flex md:absolute right-20 w-full md:w-auto px-6 py-2 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 transition duration-200"
                     >
                       Subscribe
                     </button>
                   </form>
                   <!-- sosmed -->
-                  <div class="flex flex-row">
+                  <div class="flex pt-3 gap-x-2">
                     <div class="p-1.5 rounded-full">
                       <i data-feather="instagram" class="text-slate-300"></i>
                     </div>
@@ -1229,7 +1228,7 @@
                         width="24"
                         height="24"
                         src="https://img.icons8.com/external-dashed-line-kawalan-studio/24/cbd5e1/external-tik-tok-social-media-dashed-line-kawalan-studio.png"
-                        alt="external-tik-tok-social-media-dashed-line-kawalan-studio"
+                        alt="TikTok Icon"
                       />
                     </div>
                     <div class="p-1.5 rounded-full">
@@ -1253,15 +1252,14 @@
             </ul>
           </div>
         </div>
-        <!-- copyrigth -->
-        <div
-          class="w-full justify-center items-center text-center pt-10 px-10 text-white"
-        >
+        <!-- copyright -->
+        <div class="w-full flex-col justify-center items-center text-center pt-10 px-5 text-white">
           <hr class="w-full" />
           <p class="pt-4">Go Green with &copy;Florera 2024</p>
         </div>
       </div>
     </section>
+    
     <!-- footer end -->
 
     <!-- icons feather -->
