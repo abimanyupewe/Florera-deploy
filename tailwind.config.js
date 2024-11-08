@@ -24,7 +24,7 @@ module.exports = {
 
       // ukuran web
       screens: {
-        "2xl": "1320px",
+        // "2xl": "1320px",
       },
 
       // animations
