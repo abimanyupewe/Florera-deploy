@@ -9,11 +9,11 @@ module.exports = {
     extend: {
       // ini untuk menambahkan fitur yang sudah dimiliki tailwind
       colors: {
-        // gray_gw: "#3C3D37",
+        green_gw: "#163020",
         gray_pudar_gw: "#F5F5F5",
         gray_gw: "#D0D4CA",                                                    
         yellow_gw: "#FFD700",
-        green_gw: "#294936",
+        // green_gw: "#294936",
         green_pastel: "#C6D79D",
       },
 
@@ -24,7 +24,7 @@ module.exports = {
 
       // ukuran web
       screens: {
-        // "2xl": "1320px",
+        "2xl": "1320px", 
       },
 
       // animations
