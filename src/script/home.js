@@ -23,41 +23,23 @@ hamburger.addEventListener("click", function () {
 
 // buat efek total project
 // window.onload = animateProjectsCount; // Memulai animasi saat halaman dimuat
-// function animateProjectsCount() { 
-//   const element = document.getElementById("total-projects");
-//   let startValue = 0; // Memulai dari 0
-//   const endValue = 50; // Nilai akhir yang diinginkan
-//   const duration = 10000; // Durasi animasi dalam milidetik (2 detik)
-//   const stepTime = Math.abs(Math.floor(duration / endValue)); // Waktu per langkah
+function animateProjectsCount() { 
+  const element = document.getElementById("total-projects");
+  let startValue = 0; // Memulai dari 0
+  const endValue = 50; // Nilai akhir yang diinginkan
+  const duration = 10000; // Durasi animasi dalam milidetik (2 detik)
+  const stepTime = Math.abs(Math.floor(duration / endValue)); // Waktu per langkah
 
-//   const timer = setInterval(() => {
-//     startValue++;
-//     element.textContent = `${startValue} Kg`;
-//     if (startValue >= endValue) {
-//       clearInterval(timer); // Menghentikan animasi setelah mencapai nilai akhir
-//     }
-//   }, stepTime);
-// }
-
-// window.onload = animateProjectsCount; // Memulai animasi saat halaman dimuat
-
-// Pilih elemen di mana angka akan ditampilkan
-const totalProjectsEl = document.getElementById("total-projects");
-let count = 0; // Nilai awal
-const target = 50; // Nilai target
-
-// Fungsi untuk menghitung angka bertahap
-function incrementCounter() {
-  const increment = Math.ceil(target / 50); // Mengatur kecepatan kenaikan angka
-  if (count < target) {
-    count += increment;
-    totalProjectsEl.innerText = count > target ? target : count; // Menampilkan angka
-    setTimeout(incrementCounter, 50); // Mengatur interval waktu
-  }
+  const timer = setInterval(() => {
+    startValue++;
+    element.textContent = `${startValue} Kg`;
+    if (startValue >= endValue) {
+      clearInterval(timer); // Menghentikan animasi setelah mencapai nilai akhir
+    }
+  }, stepTime);
 }
 
-// Memulai efek perhitungan saat halaman selesai dimuat
-window.onload = incrementCounter;
+window.onload = animateProjectsCount; // Memulai animasi saat halaman dimuat
 // efek end
 
 // misi kami
