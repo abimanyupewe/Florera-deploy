@@ -78,25 +78,7 @@ updateCarousel();
 
 // misi kami end
 
-// // proses pembuatan
-// function showDescription(title, description) {
-//   document.getElementById('modal-title').textContent = title;
-//   document.getElementById('modal-description').textContent = description;
-//   document.getElementById('overlay').classList.remove('hidden'); // Menampilkan overlay dan modal
-// }
 
-// // Menutup modal
-// document.getElementById('close').addEventListener('click', () => {
-//   document.getElementById('overlay').classList.add('hidden'); // Menyembunyikan overlay dan modal
-// });
-
-// // Menutup modal jika klik di luar konten modal
-// document.getElementById('overlay').addEventListener('click', (e) => {
-//   if (e.target === document.getElementById('overlay')) {
-//       document.getElementById('overlay').classList.add('hidden'); // Menyembunyikan overlay dan modal
-//   }
-// });
-// // proses pembuatan end
 
 // documentation
 const images = [
