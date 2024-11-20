@@ -26,16 +26,16 @@ hamburger.addEventListener("click", function () {
 function animateProjectsCount() { 
   const element = document.getElementById("total-projects");
   let startValue = 0; // Memulai dari 0
-  const endValue = 50; // Nilai akhir yang diinginkan
+  const endValue = 25; // Nilai akhir yang diinginkan
   const duration = 10000; // Durasi animasi dalam milidetik (2 detik)
   const stepTime = Math.abs(Math.floor(duration / endValue)); // Waktu per langkah
 
   const timer = setInterval(() => {
     startValue++;
-    element.textContent = `${startValue} Kg`;
+    element.textContent = `${startValue} L`;
     if (startValue >= endValue) {
       clearInterval(timer); // Menghentikan animasi setelah mencapai nilai akhir
-    }
+    } 
   }, stepTime);
 }
 
@@ -82,10 +82,10 @@ updateCarousel();
 
 // documentation
 const images = [
-  "src/assets/images/pexels-sasha-kim-9413760.jpg",
-  "src/assets/images/pexels-shvetsa-5830935.jpg",
-  "src/assets/images/pexels-greta-hoffman-7728970.jpg",
-  "src/assets/images/pexels-introspectivedsgn-10012860.jpg",
+  "src/assets/images/documentation/doc 1.jpg",
+  "src/assets/images/documentation/doc 2.jpg",
+  "src/assets/images/documentation/doc 3.jpg",
+  "src/assets/images/documentation/doc 4.jpg",
 ];
 let currentImageIndex = 0;
 let scale = 1;
