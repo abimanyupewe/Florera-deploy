@@ -1,3 +1,23 @@
+// pop up info
+document.addEventListener('DOMContentLoaded', function () {
+  const popup = document.getElementById('popup-info');
+  const closeButton = document.getElementById('close-popup');
+
+  // // buat cuma muncul satu kali saat pertama kali masuk
+  // if (!localStorage.getItem('popupDisplayed')) {
+  //     popup.classList.remove('hidden');
+  //     localStorage.setItem('popupDisplayed', 'true');
+  // }
+
+  // Tampilkan pop-up setiap kali halaman di-load
+  popup.classList.remove('hidden');
+
+  closeButton.addEventListener('click', function () {
+      popup.classList.add('hidden');
+  });
+});
+// pop up info end
+
 // navbar fixed
 window.onscroll = function () {
   const header = document.querySelector("header"); // memanggil langsung elementnnya
