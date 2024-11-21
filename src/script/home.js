@@ -189,24 +189,16 @@ document.addEventListener("touchend", () => {
 // documentation end
 
 // our team
-let currentIndex = 0;
-const slides = document.querySelectorAll("#team-slider > div");
-const totalSlidesTeam = slides.length;
-
-function updateSlidePosition() {
-  const slider = document.getElementById("team-slider");
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+const sliderTeam = document.getElementById("team-slider");
 
 function nextSlideteam() {
-  currentIndex = (currentIndex + 1) % totalSlidesTeam;
-  updateSlidePosition();
+  sliderTeam.scrollBy({ left: 300, behavior: "smooth" });
 }
 
 function prevSlideteam() {
-  currentIndex = (currentIndex - 1 + totalSlidesTeam) % totalSlidesTeam;
-  updateSlidePosition();
+  sliderTeam.scrollBy({ left: -300, behavior: "smooth" });
 }
+
 // our team
 
 // kursus
