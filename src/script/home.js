@@ -74,8 +74,8 @@ function updateCarousel() {
   const offset = currentSlide * -100;
   carousel.style.transform = `translateX(${offset}%)`;
   dots.forEach((dot, index) => {
-    dot.classList.toggle("bg-green_gw", index === currentSlide);
-    dot.classList.toggle("bg-gray-300", index !== currentSlide);
+    dot.classList.toggle("bg-green_pastel", index === currentSlide);
+    dot.classList.toggle("bg-gray_gw", index !== currentSlide);
   });
 }
 
