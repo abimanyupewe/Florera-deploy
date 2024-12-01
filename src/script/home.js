@@ -218,7 +218,6 @@ function nextSlideteam() {
 function prevSlideteam() {
   sliderTeam.scrollBy({ left: -300, behavior: "smooth" });
 }
-
 // our team
 
 // kursus
