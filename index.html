@@ -20,7 +20,7 @@
   </head>
   <body class="font-poppins m-0">
     <!-- pop up info -->
-     <section>
+    <section>
       <div id="popup-info" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
         <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full text-center">
             <h2 class="text-xl font-bold mb-4">Selamat Datang di Florera!</h2>
@@ -37,17 +37,17 @@
                   </svg>
               </div>
             </div>
-            <button id="close-popup" class="bg-green_gw text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+            <button id="close-popup" class="bg-green_gw text-white px-4 py-2 rounded-lg hover:bg-green-800 transition">
                 Mulai Jelajahi    
             </button>
           </div>
         </div>
-     </section>
+    </section>
     <!-- pop up info end -->
 
     <!-- pleace holder wa -->
     <section>
-          <div class="fixed bottom-5 right-5 z-20">
+          <div id="whatsapp-button" class="fixed bottom-5 right-5 z-20">
             <a
               href="https://wa.me/6285643124688?text=Halo%20Florera!%20Saya%20ingin%20bertanya%20tentang%20produk%20Anda."
               target="_blank"
@@ -58,18 +58,18 @@
                 alt="WhatsApp"
                 class="w-6 h-6"
               />
-              <span class="font-semibold hidden md:block">Chat dengan kami</span>
+              <span class="font-semibold hidden md:block">Chat kami</span>
             </a>
           </div>
     </section>
     <!-- pleace holder wa -->
 
     <!-- hero section -->
-    <section class="w-full bg-green_gw">
+    <section id="hero" class="w-full bg-green_gw">
       <div class="relative">
         <!-- Navigation -->
         <!-- Header Start -->
-        <header
+        <header 
           class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
         >
           <div class="container mx-auto sm:px-16 md:px-8 lg:px-12">
@@ -81,7 +81,7 @@
                   src="src/assets/images/logo/logo.png"
                   alt=""
                 />
-                <a href="#home" class="font-bold text-lg text-white block py-6">
+                <a href="#home" class="font-semibold text-lg text-white block py-6">
                   FLORERA
                 </a>
               </div>
@@ -108,7 +108,7 @@
                 <!-- Navbar for Larger Screens -->
                 <nav
                   id="nav-menu"
-                  class="lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none hidden absolute py-5 shadow-lg bg-green_gw opacity-70 rounded-lg max-w-[250px] w-full right-4 top-full"
+                  class="lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none hidden absolute py-5 shadow-lg bg-green_gw opacity-90 rounded-lg max-w-[250px] w-full right-4 top-full"
                 >
                   <ul class="block lg:flex">
                     <li class="group">
@@ -222,7 +222,7 @@
             </div>
 
             <!-- Bagian kanan: Informasi Utama -->
-            <div class="w-full lg:w-1/2 self-center">
+            <div class="w-full lg:w-1/2">
               <div
                 class="mt-4 pl-10 relative lg:mt-9 lg:right-0 w-72 md:w-full sm:w-48"
               >
@@ -242,19 +242,19 @@
     <!-- produk kami -->
     <section class="py-10">
       <div class="container mx-auto px-4">
-        <!-- Button to Shop Page -->
+        <!-- Header and Button -->
         <div class="flex items-center justify-around mb-6 mx-auto md:mx-20">
           <h2 class="text-lg md:text-2xl font-semibold text-gray-700">Produk Kami</h2>
           <!-- Button to Shop Page -->
           <a
             href="/shop"
-            class="px-6 py-2 bg-green_gw text-white rounded-lg hover:bg-green_pastel transition flex items-center space-x-2"
+            class="px-6 py-2 bg-green_gw text-white rounded-lg hover:bg-green-800 transition flex items-center space-x-2"
           >
             <i data-feather="shopping-bag"></i>
             <p>Go to Shop</p>
           </a>
         </div>
-
+    
         <div class="relative max-w-6xl mx-auto overflow-hidden">
           <!-- Slider Cards -->
           <div
@@ -264,24 +264,26 @@
             <!-- Product Card 1 -->
             <div
               class="bg-white p-4 rounded-lg shadow-md w-60 sm:w-64 md:w-72 cursor-pointer flex-shrink-0"
-              onclick="redirectToProduct(1)"
             >
               <img
                 src="src/assets/images/products/Produk 250 ml.jpeg"
                 alt="POC 250 ml"
                 class="rounded-lg w-full h-60 object-cover mb-4"
               />
-              <h3 class="text-xl font-semibold">Nutrigrow Spary</h3>
-              <p class="text-gray-600 mt-2">
-                Pupuk Organik Cair Nutrigrow 250 ml.
-              </p>
+              <h3 class="text-xl font-semibold">Nutrigrow Spray</h3>
+              <p class="text-gray-600 mt-2">Pupuk Organik Cair Nutrigrow 250 ml.</p>
               <p class="text-green-500 font-semibold mt-2">Rp 15.000</p>
+              <!-- Add to Cart Button -->
+              <button
+                class="w-full mt-4 bg-green_gw text-white py-2 rounded-lg hover:bg-green-800 transition"
+              >
+                Add to Cart
+              </button>
             </div>
-            <!-- Tambahkan card lainnya dengan pola yang sama -->
+    
             <!-- Product Card 2 -->
             <div
               class="bg-white p-4 rounded-lg shadow-md w-60 sm:w-64 md:w-72 cursor-pointer flex-shrink-0"
-              onclick="redirectToProduct(2)"
             >
               <img
                 src="src/assets/images/products/Produk 100 ml.jpeg"
@@ -289,55 +291,15 @@
                 class="rounded-lg w-full h-60 object-cover mb-4"
               />
               <h3 class="text-xl font-semibold">Nutrigrow Pure</h3>
-              <p class="text-gray-600 mt-2">
-                Pupuk organik cair 100 ml. 
-              </p>
+              <p class="text-gray-600 mt-2">Pupuk Organik Cair Nutrigrow 100 ml.</p>
               <p class="text-green-500 font-semibold mt-2">Rp 25.000</p>
+              <!-- Add to Cart Button -->
+              <button
+                class="w-full mt-4 bg-green_gw text-white py-2 rounded-lg hover:bg-green-800 transition"
+              >
+                Add to Cart
+              </button>
             </div>
-        </div>
-        <div class="hidden">
-          <!-- Slider Buttons -->
-          <div class="absolute inset-y-0 left-0 flex items-center">
-            <button
-              id="prevBtn"
-              class="p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-gray-700"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="absolute inset-y-0 right-0 flex items-center">
-            <button
-              id="nextBtn"
-              class="p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-gray-700"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
           </div>
         </div>
       </div>
@@ -356,34 +318,87 @@
     <!-- about us end -->
 
     <!-- about produk -->
-    <section class="w-full mx-auto p-20 bg-green_gw flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-20">
+    <section class="w-full mx-auto p-20 flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-20">
       <!-- Image on the Left -->
       <div class="w-full md:w-1/3 flex justify-center">
         <img
-          src="src/assets/images/brand/01.jpg"
+          id="product-image"
+          src="src/assets/images/products/Produk 250 ml.jpeg"
           alt="Produk Tanaman"
           class="w-full h-72 md:h-96 rounded-lg shadow-lg object-cover"
         />
       </div>
     
       <!-- Product Information -->
-      <div class="w-full md:w-2/3 text-center md:text-left">
-        <h2 class="text-2xl font-bold text-white mb-4">Tentang Produk</h2>
-    
-        <p class="text-gray-200 mb-6">
+      <div class="w-full md:w-1/3 text-center md:text-left">
+        <h2 class="text-2xl font-bold text-blank mb-4">Tentang Produk</h2>
+        <p class="text-slate-600 mb-6">
           Produk kami adalah solusi terbaik untuk tanaman Anda. Menyediakan nutrisi yang dibutuhkan untuk pertumbuhan optimal tanaman di berbagai musim.
         </p>
     
-        <!-- Button to Keunggulan Page -->
-        <a
-          href="src/pages/home/tentang-produk.html"
-          class="inline-block mt-4 px-6 py-2 bg-green_pastel text-green_gw rounded-lg hover:bg-green_pastel hover:text-white hover:opacity-8 transition font-semibold"
-        >
-          Lihat Lebih Lanjut
-        </a>
+        <!-- Product Filter -->
+        <div class="filter mt-6">
+          <label for="product-filter" class="block mb-2 text-lg font-semibold">Pilih Produk:</label>
+          <select
+            id="product-filter"
+            class="w-full md:w-3/2 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green_gw"
+            onchange="updateProductInfo(this.value)"
+          >
+            <option value="250ml">Pupuk 250ml</option>
+            <option value="100ml">Pupuk 100ml</option>
+            <option value="media-tanam">Media Tanam</option>
+          </select>
+        </div>
+      </div>
+    
+      <!-- Accordion Section -->
+      <div class="md:w-2/4 mx-auto">
+        <!-- Accordion: Keunggulan -->
+        <div class="accordion-item border-b border-t border-gray-300 mt-4">
+          <button
+            class="accordion-header w-full hover:underline text-left py-4 text-lg font-semibold flex justify-between items-center"
+            onclick="toggleAccordion(this)"
+          >
+            Keunggulan
+            <span class="indicator transform transition-transform duration-300">
+              <i data-feather="chevron-down"></i>
+            </span>
+          </button>
+          <div id="keunggulan-content" class="accordion-content hidden pl-4 text-slate-600">
+            <!-- Default Keunggulan -->
+            <p class="py-2">1. Untuk Segala Jenis Tanaman (Bunga, Buah, dan Sayur).</p>
+            <p class="py-2">2. TIDAK BERBAU dan Ramah Lingkungan. (100% ORGANIK)</p>
+            <p class="py-2">3. Mempercepat pertumbuhan Akar dan Tunas Baru.</p>
+            <p class="py-2">4. Mempercepat pertumbuhan Vegetatif dan Generatif sekaligus.</p>
+            <p class="py-2">5. Aman digunakan terhadap Semua Tanaman di Semua Musim.</p>
+            <p class="py-2">6. Meningkatkan Hasil Panen secara alami dan aman.</p>
+            <p class="py-2">7. Mengandung Nutrisi Esensial yang membantu fotosintesis tanaman.</p>
+            <p class="py-2">8. Dapat dikombinasikan dengan Pupuk Makro/Mikro kimia.</p>
+          </div>
+        </div>
+    
+        <!-- Accordion: Cara Pemakaian -->
+        <div class="accordion-item border-b border-gray-300">
+          <button
+            class="accordion-header w-full hover:underline text-left py-4 text-lg font-semibold flex justify-between items-center"
+            onclick="toggleAccordion(this)"
+          >
+            Cara Pemakaian
+            <span class="indicator transform transition-transform duration-300">
+              <i data-feather="chevron-down"></i>
+            </span>
+          </button>
+          <div id="pemakaian-content" class="accordion-content hidden pl-4 text-slate-600">
+            <!-- Default Cara Pemakaian -->
+            <p class="py-2">1. Kocok terlebih dahulu sebelum digunakan.</p>
+            <p class="py-2">2. Spray pada belakang permukaan daun dan batang tanaman.</p>
+            <p class="py-2">3. Aman di gunakan setiap hari (Rekomendasi pemakaian gunakan 3 atau 4 kali seminggu).</p>
+            <p class="py-2">4. Waktu aplikasi paling baik adalah Pagi hari jam 07.00 - 10.00 Pagi atau 16.00 -18.00 Sore.</p>
+            <p class="py-2">5. Simpan ditempat kering dan jauhkan dari jangkauan anak-anak.</p>
+          </div>
+        </div>
       </div>
     </section>
-    
     <!-- about produk end -->
 
     <!-- kursus kami -->
@@ -420,7 +435,7 @@
               </p>
               <p class="text-green-600 font-bold mt-2">Rp 200.000</p>
               <button
-                class="bg-blue-600 text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+                class="bg-green_gw text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-green-800 transition-colors duration-300"
               >
                 Beli
               </button>
@@ -451,15 +466,42 @@
               </p>
               <p class="text-green-600 font-bold mt-2">Rp 250.000</p>
               <button
-                class="bg-blue-600 text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-blue-700 transition-colors duration-300"
+                class="bg-green_gw text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-green-800 transition-colors duration-300"
               >
                 Beli
               </button>
             </div>
           </div>
-
-          
-
+          <!-- Course Card 2 -->
+          <div class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
+            <img
+              src="src/assets/images/pexels-greta-hoffman-7728970.jpg"
+              alt="Thumbnail Course 2"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4 text-left">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Judul Course 2
+              </h3>
+              <p class="text-gray-600 mt-2">
+                Deskripsi singkat course ini untuk memberikan gambaran tentang
+                materi yang akan dipelajari.
+              </p>
+              <div class="flex items-center mt-3 text-yellow-500">
+                <span>★★★★☆</span>
+                <span class="text-gray-500 text-sm ml-2">(4.7)</span>
+              </div>
+              <p class="text-gray-700 mt-2">
+                Mentor: <span class="font-medium">Nama Mentor 2</span>
+              </p>
+              <p class="text-green-600 font-bold mt-2">Rp 250.000</p>
+              <button
+                class="bg-green_gw text-white font-semibold w-full py-2 mt-4 rounded-md hover:bg-green-800 transition-colors duration-300"
+              >
+                Beli
+              </button>
+            </div>
+          </div>
         <!-- Slider Controls -->
         <div class="hidden md:block">
           <button
@@ -505,12 +547,90 @@
 
       <!-- View All Courses Button -->
       <button
-        class="bg-green_gw text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-green_pastel transition-colors duration-300 mt-8"
+        class="bg-green_gw text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-green-800 transition-colors duration-300 mt-8"
       >
         Lihat Semua Course
       </button>
     </section>
     <!-- kursus kami end -->
+
+    <!-- blog -->
+    <section class="py-10 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-semibold text-gray-700">Blog Kami</h2>
+          <p class="text-gray-600 mt-2">Temukan tips berkebun dan informasi tentang produk kami.</p>
+        </div>
+    
+        <!-- Blog Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Blog Card 1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="src/assets/images/blog/blog1.jpeg"
+              alt="Tips Berkebun"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800">Tips Berkebun untuk Pemula</h3>
+              <p class="text-gray-600 mt-4">
+                Pelajari cara memulai kebun Anda sendiri di rumah dengan langkah-langkah sederhana.
+              </p>
+              <a
+                href="/blog/tips-berkebun"
+                class="inline-block mt-4 text-green-500 font-semibold hover:underline"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
+    
+          <!-- Blog Card 2 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="src/assets/images/blog/blog2.jpeg"
+              alt="Manfaat Pupuk Organik"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800">Manfaat Pupuk Organik Nutrigrow</h3>
+              <p class="text-gray-600 mt-4">
+                Ketahui bagaimana pupuk organik kami dapat meningkatkan hasil tanaman Anda.
+              </p>
+              <a
+                href="/blog/manfaat-pupuk-organik"
+                class="inline-block mt-4 text-green-500 font-semibold hover:underline"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
+    
+          <!-- Blog Card 3 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="src/assets/images/blog/blog3.jpeg"
+              alt="Cara Merawat Tanaman"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800">Cara Merawat Tanaman dengan Baik</h3>
+              <p class="text-gray-600 mt-4">
+                Panduan lengkap untuk menjaga tanaman Anda tetap sehat dan subur.
+              </p>
+              <a
+                href="/blog/cara-merawat-tanaman"
+                class="inline-block mt-4 text-green-500 font-semibold hover:underline"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- blog end -->
 
     <!-- testimony -->
     <section id="testimony" class="bg-green_gw py-12">
@@ -724,132 +844,60 @@
 
     <!-- proses Documentation produk -->
     <section class="w-full">
-      <div class="max-w-4xl mx-auto p-4">
+      <div class="max-w-5xl mx-auto p-4">
         <div class="pb-10">
-          <h1
-            class="text-2xl font-semibold pt-6 pb-4 text-green_gw text-center"
-          >
+          <h1 class="text-2xl font-semibold pt-6 pb-4 text-green_gw text-center">
             Documentation
           </h1>
         </div>
-        <div class="relative px-10">
-          <!-- Main Image / Video -->
-          <div class="w-full overflow-hidden">
-            <img
-              id="mainImage"
-              src="src/assets/images/documentation/doc 1.jpg"
-              alt="Documentation Image"
-              class="w-full h-96 object-cover zoomable rounded-lg"
-              onclick="openModal(this.src)"
-            />
+        <div class="relative p-2 rounded-xl border border-gray-500 flex flex-col md:flex-row">
+          <!-- Description Section (Left side) -->
+          <div class="w-full md:w-2/3 flex flex-col justify-center px-12">
+            <div class="mb-4">
+              <h2 id="imageTitle" class="text-xl font-semibold text-gray-800">Proses Pengolahan</h2>
+              <p id="imageDescription" class="text-gray-600 mt-2">
+                Proses pengolahan bahan organik menjadi pupuk yang berkualitas tinggi dan ramah lingkungan.
+              </p>
+            </div>
           </div>
-
-          <!-- Slider Controls -->
-          <button
-            onclick="prevImage()"
-            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
-          >
-          <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 19l-7-7 7-7"
-          />
-          </button>
-          <button
-            onclick="nextImage()"
-            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
-          >
-          <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5l7 7-7 7"
-          />
-          </button>
-        </div>
-
-        <!-- Thumbnails -->
-        <div class="mt-4 flex justify-center space-x-2">
-          <img
-            src="src/assets/images/documentation/doc 1.jpg"
-            alt="Thumbnail"
-            onclick="showImage('src/assets/images/documentation/doc 1.jpg')"
-            class="w-20 h-20 object-cover cursor-pointer border-2 border-transparent hover:border-blue-500 rounded-md"
-          />
-          <img
-            src="src/assets/images/documentation/doc 2.jpg"
-            alt="Thumbnail"
-            onclick="showImage('src/assets/images/documentation/doc 2.jpg')"
-            class="w-20 h-20 object-cover cursor-pointer border-2 border-transparent hover:border-blue-500 rounded-md"
-          />
-          <img
-            src="src/assets/images/documentation/doc 3.jpg"
-            alt="Thumbnail"
-            onclick="showImage('src/assets/images/documentation/doc 3.jpg')"
-            class="w-20 h-20 object-cover cursor-pointer border-2 border-transparent hover:border-blue-500 rounded-md"
-          />
-          <img
-            src="src/assets/images/documentation/doc 4.jpg"
-            alt="Thumbnail"
-            onclick="showImage('src/assets/images/documentation/doc 4.jpg')"
-            class="w-20 h-20 object-cover cursor-pointer border-2 border-transparent hover:border-blue-500 rounded-md"
-          />
+    
+          <!-- Image Section (Right side) -->
+          <div class="w-full md:w-2/3 flex flex-col justify-center">
+            <div class="w-full overflow-hidden">
+              <img
+                id="mainImage"
+                src="src/assets/images/documentation/doc 1.jpg"
+                alt="Documentation Image"
+                class="w-full h-96 object-cover rounded-lg"
+                onclick="openModal(this.src)"
+              />
+            </div>
+    
+            <!-- Slider Controls -->
+            <button
+              onclick="prevImage()"
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onclick="nextImage()"
+              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- Modal Overlay -->
-    <div
-      id="imageModal"
-      class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center"
-    >
-      <div class="modal-content relative rounded-lg shadow-lg">
-        <img id="modalImage" src="" class="transform scale-1" />
-
-        <!-- Zoom Controls -->
-        <div class="absolute top-4 left-4">
-          <button
-            onclick="closeModal()"
-            class="bg-red-500 text-white p-2 rounded-md"
-          >
-            ×
-          </button>
-        </div>
-        <div class="absolute bottom-4 right-4 flex space-x-2">
-          <button
-            onclick="zoomIn()"
-            class="bg-blue-500 text-white p-2 rounded-md"
-          >
-            +
-          </button>
-          <button
-            onclick="zoomOut()"
-            class="bg-blue-500 text-white p-2 rounded-md"
-          >
-            –
-          </button>
-        </div>
-      </div>
-    </div>
     <!-- proses pembuatan produk end -->
 
     <!-- our team -->
-    <section class="pt-20">
+    <section class="py-20">
       <div class="justify-center">
         <div>
           <h1 class="text-2xl font-semibold pt-6 text-green_gw text-center">
@@ -1221,7 +1269,7 @@
                     eksklusif langsung ke email Anda.
                   </p>
                   <form
-                    class="mt-5 max-w-md mx-auto flex flex-col md:flex-row items-center space-y-4 md:space-y-0"
+                    class="mt-5 mx-auto flex flex-col md:flex-row items-center space-y-4 md:space-y-0"
                   >
                     <input
                       type="email"
@@ -1285,7 +1333,9 @@
     <!-- icons feather -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
-      feather.replace();
+      document.addEventListener('DOMContentLoaded', () => {
+        feather.replace();
+      });
     </script>
     <!-- script javascript -->
     <script src="src/script/home.js"></script>
