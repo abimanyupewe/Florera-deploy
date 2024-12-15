@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Florera Dashboard</title>
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link rel="stylesheet" href="../output.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 font-poppins">
+    <!-- Wrapper -->
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <div
+        id="sidebar"
+        class="fixed top-0 left-0 w-64 h-full bg-green_gw text-white transform -translate-x-full transition-transform duration-300 md:relative md:translate-x-0 md:flex md:flex-col"
+      >
+        <div class="p-4 font-bold text-lg">Florera Dashboard</div>
+        <ul>
+          <li
+            class="p-4 hover:bg-green-600 cursor-pointer"
+            onclick="showPage('dashboard')"
+          >
+            Dashboard
+          </li>
+          <li
+            class="p-4 hover:bg-green-600 cursor-pointer"
+            onclick="showPage('shop')"
+          >
+            Shop
+          </li>
+          <li
+            class="p-4 hover:bg-green-600 cursor-pointer"
+            onclick="showPage('courses')"
+          >
+            Kursus
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-1">
+        <!-- Header -->
+        <div class="bg-white shadow p-4 flex justify-between items-center">
+          <h1 class="text-xl font-bold">Dashboard</h1>
+          <input
+            type="text"
+            placeholder="Cari..."
+            class="border rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-green-300"
+          />
+          <button
+            id="cart"
+            class="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-100"
+            onclick="openCart()"
+          >
+            <!-- Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2m0 0L7.6 15h8.8l2.2-8H5.4M7.6 15l-.4 2m10.4-2-.4 2M9 20h1m4 0h1m-7 0a1 1 0 100 2 1 1 0 000-2zm6 0a1 1 0 100 2 1 1 0 000-2z"
+              />
+            </svg>
+            <!-- Notification Badge -->
+            <span
+              id="cart-badge"
+              class="absolute top-0 right-0 w-4 h-4 bg-red-500 text-xs text-white rounded-full flex items-center justify-center"
+            >
+              3
+            </span>
+          </button>
+          <!-- Hamburger Button -->
+          <button
+            id="hamburger"
+            class="block md:hidden focus:outline-none"
+            onclick="toggleSidebar()"
+          >
+            <span
+              class="block w-6 h-0.5 bg-black my-1 transition-transform duration-300"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-black my-1 transition-transform duration-300"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-black my-1 transition-transform duration-300"
+            ></span>
+          </button>
+        </div>
+
+        <!-- Content -->
+        <div class="p-4">
+          <div id="content">
+            <div id="dashboard" class="page">Ini adalah halaman Dashboard</div>
+            <div id="shop" class="page hidden">
+              Ini adalah halaman Shop
+              <!-- Shop Section -->
+              <div id="shop" class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Shop</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <!-- Card -->
+                  <div class="bg-white shadow-md rounded-md p-4">
+                    <h3 class="font-bold">Produk 1</h3>
+                    <p class="text-gray-600">Deskripsi singkat produk.</p>
+                    <button
+                      class="mt-2 bg-green-700 text-white px-4 py-2 rounded-md"
+                    >
+                      Detail
+                    </button>
+                  </div>
+                  <!-- Tambahkan lebih banyak produk di sini -->
+                </div>
+              </div>
+            </div>
+            <div id="courses" class="page hidden">
+              Ini adalah halaman Kursus
+              <!-- Kursus Section -->
+              <div id="courses">
+                <h2 class="text-2xl font-bold mb-4">Kursus</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <!-- Card -->
+                  <div class="bg-white shadow-md rounded-md p-4">
+                    <h3 class="font-bold">Kursus 1</h3>
+                    <p class="text-gray-600">Deskripsi singkat kursus.</p>
+                    <button
+                      class="mt-2 bg-green-700 text-white px-4 py-2 rounded-md"
+                    >
+                      Detail
+                    </button>
+                  </div>
+                  <!-- Tambahkan lebih banyak kursus di sini -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../script/dashboard.js"></script>
+  </body>
+</html>

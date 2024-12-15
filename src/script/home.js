@@ -200,29 +200,6 @@ function redirectToProduct(productId) {
 }
 // produk end
 
-// // testimony
-const sliderTesti = document.getElementById("testimony-slider");
-const nextButton = document.getElementById("btn-next-testi");
-const prevButton = document.getElementById("btn-previous-testi");
-let currentIndexTesti = 0;
-const totalSlidesTesti = sliderTesti.children.length;
-
-function updateSlider() {
-  sliderTesti.style.transform = `translateX(-${currentIndexTesti * 100}%)`;
-}
-
-nextButton.addEventListener("click", () => {
-  currentIndexTesti = (currentIndexTesti + 1) % totalSlidesTesti;
-  updateSlider();
-});
-
-prevButton.addEventListener("click", () => {
-  currentIndexTesti =
-    (currentIndexTesti - 1 + totalSlidesTesti) % totalSlidesTesti;
-  updateSlider();
-});
-// // testimony end
-
 // about produk
 // arrcordion produk
 function toggleAccordion(element) {
@@ -245,7 +222,6 @@ function updateProductInfo(selectedProduct) {
   const keunggulanContent = document.getElementById("keunggulan-content");
   const pemakaianContent = document.getElementById("pemakaian-content");
 
-  // Update berdasarkan produk yang dipilih
   if (selectedProduct === "250ml") {
     productImage.src = "../../src/assets/images/products/Produk 250 ml.jpeg";
     keunggulanContent.innerHTML = `
@@ -293,19 +269,3 @@ function updateProductInfo(selectedProduct) {
   }
 }
 // about produk end
-
-// btn whatsapp
-const heroSection = document.getElementById("hero");
-const whatsappButton = document.getElementById("whatsapp-button");
-
-window.addEventListener("scroll", () => {
-  const heroBottom = heroSection.getBoundingClientRect().bottom;
-
-  // Jika scroll melewati Hero Section, tampilkan tombol
-  if (heroBottom <= 0) {
-    whatsappButton.style.display = "block";
-  } else {
-    whatsappButton.style.display = "none";
-  }
-});
-// btn whatsapp end

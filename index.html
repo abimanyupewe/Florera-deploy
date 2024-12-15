@@ -14,6 +14,9 @@
       rel="stylesheet"
     />
 
+    <!-- animation scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- icons feather -->
     <script src="https://unpkg.com/feather-icons"></script>
     <title>Landing page Florera</title>
@@ -47,20 +50,20 @@
 
     <!-- pleace holder wa -->
     <section>
-          <div id="whatsapp-button" class="fixed bottom-5 right-5 z-20">
-            <a
-              href="https://wa.me/6285643124688?text=Halo%20Florera!%20Saya%20ingin%20bertanya%20tentang%20produk%20Anda."
-              target="_blank"
-              class="flex items-center space-x-3 bg-green-500 text-white px-4 py-4 rounded-full shadow-lg hover:bg-green_gw transition duration-300"
-            >
-              <img
-                src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png"
-                alt="WhatsApp"
-                class="w-6 h-6"
-              />
-              <span class="font-semibold hidden md:block">Chat kami</span>
-            </a>
-          </div>
+      <div id="whatsapp-button" class="fixed bottom-5 right-5 z-20">
+        <a
+          href="https://wa.me/6285643124688?text=Halo%20Florera!%20Saya%20ingin%20bertanya%20tentang%20produk%20Anda."
+          target="_blank"
+          class="flex items-center space-x-3 bg-green_gw text-white px-4 py-4 rounded-full shadow-lg hover:bg-green-800 transition duration-300"
+        >
+          <img
+            src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png"
+            alt="WhatsApp"
+            class="w-6 h-6"
+          />
+          <span class="font-semibold hidden md:block">Chat kami</span>
+        </a>
+      </div>
     </section>
     <!-- pleace holder wa -->
 
@@ -137,6 +140,13 @@
                         href="#testimonial"
                         class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
                         >Testimonial
+                      </a>
+                    </li>
+                    <li class="group">
+                      <a
+                        href="#testimonial"
+                        class="text-base font-normal text-white py-2 mx-8 flex group-hover:text-yellow_gw hover:underline"
+                        >Blog
                       </a>
                     </li>
                     <li class="group">
@@ -243,7 +253,7 @@
     <section class="py-10">
       <div class="container mx-auto px-4">
         <!-- Header and Button -->
-        <div class="flex items-center justify-around mb-6 mx-auto md:mx-20">
+        <div data-aos="zoom-in" data-aos-delay="500" class="flex items-center justify-around mb-6 mx-auto md:mx-20">
           <h2 class="text-lg md:text-2xl font-semibold text-gray-700">Produk Kami</h2>
           <!-- Button to Shop Page -->
           <a
@@ -263,6 +273,7 @@
           >
             <!-- Product Card 1 -->
             <div
+            data-aos="fade-right" data-aos-delay="500"
               class="bg-white p-4 rounded-lg shadow-md w-60 sm:w-64 md:w-72 cursor-pointer flex-shrink-0"
             >
               <img
@@ -283,6 +294,7 @@
     
             <!-- Product Card 2 -->
             <div
+              data-aos="fade-left" data-aos-delay="500"
               class="bg-white p-4 rounded-lg shadow-md w-60 sm:w-64 md:w-72 cursor-pointer flex-shrink-0"
             >
               <img
@@ -306,31 +318,20 @@
     </section>
     <!-- produk kami end -->
 
-    <!-- about us -->
-    <section id="about-us" class="py-16 bg-green_gw">
-      <div class="container mx-auto px-6 md:px-12 text-center">
-        <h2 class="text-4xl font-semibold text-white mb-6">About Us</h2>
-        <p class="text-lg text-gray-200 mb-10 max-w-3xl mx-auto">
-          Florera adalah platform bagi pecinta tanaman hias yang ingin memperdalam hobi berkebun dari rumah. Kami menyediakan kursus online, bibit tanaman, media tanam, dan pupuk organik. Mendukung program Kota Malang sebagai Kota Bunga, Florera menjadi wadah belajar, diskusi komunitas, serta mengadakan workshop dan seminar berkebun. Dengan Florera, berkebun lebih mudah dan menyenangkan!
-        </p>
-      </div>
-    </section>
-    <!-- about us end -->
-
     <!-- about produk -->
     <section class="w-full mx-auto p-20 flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-20">
       <!-- Image on the Left -->
-      <div class="w-full md:w-1/3 flex justify-center">
+      <div data-aos="fade-right" data-aos-delay="500" class="w-full md:w-1/3 flex justify-center">
         <img
           id="product-image"
           src="src/assets/images/products/Produk 250 ml.jpeg"
           alt="Produk Tanaman"
-          class="w-full h-72 md:h-96 rounded-lg shadow-lg object-cover"
+          class="w-full h-auto md:h-96 rounded-lg shadow-lg object-cover"
         />
       </div>
     
       <!-- Product Information -->
-      <div class="w-full md:w-1/3 text-center md:text-left">
+      <div data-aos="zoom-in" data-aos-delay="500" class="w-full md:w-1/3 text-center md:text-left">
         <h2 class="text-2xl font-bold text-blank mb-4">Tentang Produk</h2>
         <p class="text-slate-600 mb-6">
           Produk kami adalah solusi terbaik untuk tanaman Anda. Menyediakan nutrisi yang dibutuhkan untuk pertumbuhan optimal tanaman di berbagai musim.
@@ -352,7 +353,7 @@
       </div>
     
       <!-- Accordion Section -->
-      <div class="md:w-2/4 mx-auto">
+      <div data-aos="zoom-in" data-aos-delay="500" class="md:w-2/4 mx-auto">
         <!-- Accordion: Keunggulan -->
         <div class="accordion-item border-b border-t border-gray-300 mt-4">
           <button
@@ -378,7 +379,7 @@
         </div>
     
         <!-- Accordion: Cara Pemakaian -->
-        <div class="accordion-item border-b border-gray-300">
+        <div data-aos="zoom-in" data-aos-delay="500" class="accordion-item border-b border-gray-300">
           <button
             class="accordion-header w-full hover:underline text-left py-4 text-lg font-semibold flex justify-between items-center"
             onclick="toggleAccordion(this)"
@@ -403,7 +404,7 @@
 
     <!-- kursus kami -->
     <section class="w-full max-w-5xl mx-auto p-8 text-center">
-      <h2 class="text-3xl font-bold text-gray-800 mb-8">Kursus Kami</h2>
+      <h2 data-aos="zoom-in" data-aos-delay="500" class="text-3xl font-bold text-gray-800 mb-8">Kursus Kami</h2>
 
       <!-- Course Slider -->
       <div class="relative px-0 md:px-10">
@@ -412,7 +413,7 @@
           class="flex overflow-x-auto space-x-6 scroll-smooth"
         >
           <!-- Course Card 1 -->
-          <div class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
+          <div data-aos="fade-right" data-aos-delay="500" class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
             <img
               src="src/assets/images/pexels-greta-hoffman-7728970.jpg"
               alt="Thumbnail Course 1"
@@ -443,7 +444,7 @@
           </div>
 
           <!-- Course Card 2 -->
-          <div class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
+          <div data-aos="zoom-in" data-aos-delay="500" class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
             <img
               src="src/assets/images/pexels-greta-hoffman-7728970.jpg"
               alt="Thumbnail Course 2"
@@ -473,7 +474,7 @@
             </div>
           </div>
           <!-- Course Card 2 -->
-          <div class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
+          <div data-aos="fade-left" data-aos-delay="500" class="bg-white rounded-lg shadow-lg w-72 flex-shrink-0">
             <img
               src="src/assets/images/pexels-greta-hoffman-7728970.jpg"
               alt="Thumbnail Course 2"
@@ -547,6 +548,7 @@
 
       <!-- View All Courses Button -->
       <button
+        data-aos="zoom-in" data-aos-delay="300"
         class="bg-green_gw text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-green-800 transition-colors duration-300 mt-8"
       >
         Lihat Semua Course
@@ -554,11 +556,55 @@
     </section>
     <!-- kursus kami end -->
 
+    <!-- testimony -->
+    <section class="py-10">
+      <div class="container mx-auto text-center">
+        <h2 data-aos="zoom-in" data-aos-delay="500" class="text-3xl font-bold mb-6 text-gray-800">Apa Kata Mereka?</h2>
+    
+        <!-- Carousel Wrapper -->
+        <div class="relative overflow-hidden w-full max-w-3xl mx-auto p-10">
+          <div id="testimonial-slider" class="flex transition-transform duration-500">
+            <!-- Testimonial 1 -->
+            <div data-aos="zoom-in" data-aos-delay="700" class="flex-shrink-0 w-full px-6">
+              <div class="bg-white p-6 rounded-lg shadow-lg">
+                <p class="text-gray-600 mb-4 italic">"Florera sangat membantu saya belajar membuat rangkaian bunga profesional! Instruksinya sangat jelas dan mudah diikuti."</p>
+                <h5 class="text-lg font-bold text-gray-800">- Maria S.</h5>
+              </div>
+            </div>
+    
+            <!-- Testimonial 2 -->
+            <div data-aos="zoom-in" data-aos-delay="700" class="flex-shrink-0 w-full px-6">
+              <div class="bg-white p-6 rounded-lg shadow-lg">
+                <p class="text-gray-600 mb-4 italic">"Banyak tips dan trik yang berguna. Saya berhasil membuat bouquet yang indah hanya dalam beberapa hari belajar di Florera!"</p>
+                <h5 class="text-lg font-bold text-gray-800">- Andi T.</h5>
+              </div>
+            </div>
+    
+            <!-- Testimonial 3 -->
+            <div data-aos="zoom-in" data-aos-delay="700" class="flex-shrink-0 w-full px-6">
+              <div class="bg-white p-6 rounded-lg shadow-lg">
+                <p class="text-gray-600 mb-4 italic">"Marketplace Florera sangat membantu saya menjual hasil karya rangkaian bunga saya. Benar-benar platform yang luar biasa!"</p>
+                <h5 class="text-lg font-bold text-gray-800">- Lisa P.</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Navigation Dots -->
+        <div class="flex justify-center mt-6 space-x-3">
+          <button class="w-3 h-3 bg-gray-400 rounded-full" data-slide="0"></button>
+          <button class="w-3 h-3 bg-gray-400 rounded-full" data-slide="1"></button>
+          <button class="w-3 h-3 bg-gray-400 rounded-full" data-slide="2"></button>
+        </div>
+      </div>
+    </section>
+    <!-- testimony end -->
+
     <!-- blog -->
     <section class="py-10 bg-gray-50">
       <div class="container mx-auto px-4">
         <!-- Section Header -->
-        <div class="text-center mb-8">
+        <div data-aos="zoom-in" data-aos-delay="500" class="text-center mb-8">
           <h2 class="text-2xl md:text-3xl font-semibold text-gray-700">Blog Kami</h2>
           <p class="text-gray-600 mt-2">Temukan tips berkebun dan informasi tentang produk kami.</p>
         </div>
@@ -566,7 +612,7 @@
         <!-- Blog Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <!-- Blog Card 1 -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div data-aos="fade-right" data-aos-delay="700" class="bg-white rounded-lg shadow-md overflow-hidden">
             <img
               src="src/assets/images/blog/blog1.jpeg"
               alt="Tips Berkebun"
@@ -587,7 +633,7 @@
           </div>
     
           <!-- Blog Card 2 -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div data-aos="zoom-in" data-aos-delay="700" class="bg-white rounded-lg shadow-md overflow-hidden">
             <img
               src="src/assets/images/blog/blog2.jpeg"
               alt="Manfaat Pupuk Organik"
@@ -608,7 +654,7 @@
           </div>
     
           <!-- Blog Card 3 -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div data-aos="fade-left" data-aos-delay="700" class="bg-white rounded-lg shadow-md overflow-hidden">
             <img
               src="src/assets/images/blog/blog3.jpeg"
               alt="Cara Merawat Tanaman"
@@ -632,109 +678,16 @@
     </section>
     <!-- blog end -->
 
-    <!-- testimony -->
-    <section id="testimony" class="bg-green_gw py-12">
-      <div class="max-w-5xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-semibold text-white">
-          Apa Kata Pelanggan Kami
-        </h2>
-        <p class="text-gray-300 mt-4">
-          Dengarkan langsung dari orang-orang yang telah menggunakan produk kami
+    <!-- about us -->
+    <section id="about-us" class="py-16 bg-green_gw">
+      <div class="container mx-auto px-6 md:px-12 text-center">
+        <h2 data-aos="zoom-in" data-aos-delay="500" class="text-4xl font-semibold text-white mb-6">About Us</h2>
+        <p data-aos="zoom-in" data-aos-delay="700" class="text-lg text-gray-200 mb-10 max-w-3xl mx-auto">
+          Florera adalah platform bagi pecinta tanaman hias yang ingin memperdalam hobi berkebun dari rumah. Kami menyediakan kursus online, bibit tanaman, media tanam, dan pupuk organik. Mendukung program Kota Malang sebagai Kota Bunga, Florera menjadi wadah belajar, diskusi komunitas, serta mengadakan workshop dan seminar berkebun. Dengan Florera, berkebun lebih mudah dan menyenangkan!
         </p>
       </div>
-    
-      <!-- Testimonial Slider -->
-      <div class="relative max-w-4xl mx-auto px-6 mt-8 overflow-hidden overflow-x-auto">
-        <!-- Slider Container -->
-        <div
-          id="testimony-slider"
-          class="flex transition-transform duration-300 touch-pan-x"
-          style="touch-action: pan-x"
-        >
-          <!-- Slide 1 -->
-          <div class="min-w-full flex flex-col items-center px-4">
-            <img
-              src="https://via.placeholder.com/100"
-              alt="Customer 1"
-              class="rounded-full w-20 h-20 mb-4 shadow-lg"
-            />
-            <p class="text-gray-300 text-center">
-              "Produk Florera sangat membantu saya dalam berkebun! Kursus yang
-              ditawarkan juga sangat informatif."
-            </p>
-            <span class="mt-2 font-semibold text-gray-400">- Alex Rahardian</span>
-          </div>
-          <!-- Slide 2 -->
-          <div class="min-w-full flex flex-col items-center px-4">
-            <img
-              src="https://via.placeholder.com/100"
-              alt="Customer 2"
-              class="rounded-full w-20 h-20 mb-4 shadow-lg"
-            />
-            <p class="text-gray-300 text-center">
-              "Layanan Florera memberikan hasil terbaik untuk tanaman saya,
-              rekomendasi pupuknya sangat tepat."
-            </p>
-            <span class="mt-2 font-semibold text-gray-400">- Bella Andini</span>
-          </div>
-          <!-- Slide 3 -->
-          <div class="min-w-full flex flex-col items-center px-4">
-            <img
-              src="https://via.placeholder.com/100"
-              alt="Customer 3"
-              class="rounded-full w-20 h-20 mb-4 shadow-lg"
-            />
-            <p class="text-gray-300 text-center">
-              "Bibit yang disediakan Florera berkualitas tinggi, sangat cocok
-              untuk pemula dan yang sudah berpengalaman."
-            </p>
-            <span class="mt-2 font-semibold text-gray-400">- Carlos Wijaya</span>
-          </div>
-        </div>
-      </div>
-      <!-- Navigation Buttons (Visible on Desktop Only) -->
-      <div class="hidden md:flex mx-20 justify-between items-center">
-        <button
-          id="btn-previous-testi"
-          class="p-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full focus:outline-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-        <button
-          id="btn-next-testi"
-          class="p-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full focus:outline-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-      </div>
     </section>
-    <!-- testimony end -->
+    <!-- about us end -->
 
     <!-- mision -->
     <section id="infografis" class="pt-16 pb-16 bg-green_gw">
@@ -742,12 +695,12 @@
         <div class="relative w-full mx-auto">
           <!-- Carousel Items -->
           <div id="carousel" class="relative overflow-hidden text-center">
-            <h1 class="text-2xl font-semibold pt-6 pb-4 text-white">
+            <h1 data-aos="zoom-in" data-aos-delay="500" class="text-2xl font-semibold pt-6 pb-4 text-white">
               Our Mission
             </h1>
             <div class="flex transition-transform duration-500 items-center">
               <!-- Slide 1 -->
-              <div class="w-full flex-shrink-0 flex justify-center">
+              <div data-aos="zoom-in" data-aos-delay="700" class="w-full flex-shrink-0 flex justify-center">
                 <div class="h-64 w-96 flex items-center justify-center">
                   <p class="text-base md:text-lg text-gray_gw">
                     Berkomitmen untuk menghasilkan pupuk organik berkualitas
@@ -757,7 +710,7 @@
                 </div>
               </div>
               <!-- Slide 2 -->
-              <div class="w-full flex-shrink-0 flex justify-center">
+              <div data-aos="zoom-in" data-aos-delay="700" class="w-full flex-shrink-0 flex justify-center">
                 <div class="h-64 w-96 flex items-center justify-center">
                   <p class="text-base md:text-lg px-4 text-gray_gw">
                     Kami ingin mendorong lebih banyak orang untuk menanam,
@@ -768,7 +721,7 @@
                 </div>
               </div>
               <!-- Slide 3 -->
-              <div class="w-full flex-shrink-0 flex justify-center">
+              <div data-aos="zoom-in" data-aos-delay="700" class="w-full flex-shrink-0 flex justify-center">
                 <div class="h-64 w-96 flex items-center justify-center">
                   <p class="text-base md:text-lg px-4 text-gray_gw">
                     Berkomitmen untuk menghasilkan pupuk organik berkualitas
@@ -842,6 +795,23 @@
     </section>
     <!-- mision end -->
 
+    <!-- visi misi -->
+    <section id="visi-misi" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Visi & Misi Florera</h2>
+        <div class="flex justify-center">
+          <!-- Card Visi -->
+          <div class="bg-white shadow-lg rounded-lg p-6 max-w-lg w-full justify-items-center">
+            <h3 class="text-2xl font-semibold text-green-600 mb-4">Visi</h3>
+            <p class="text-gray-600">
+              "Menjadi platform terpercaya yang mendukung penghijauan dan gaya hidup berkelanjutan melalui edukasi berkebun bagi masyarakat."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>        
+    <!-- visi misi end -->
+
     <!-- proses Documentation produk -->
     <section class="w-full">
       <div class="max-w-5xl mx-auto p-4">
@@ -850,11 +820,11 @@
             Documentation
           </h1>
         </div>
-        <div class="relative p-2 rounded-xl border border-gray-500 flex flex-col md:flex-row">
+        <div class="relative p-2 rounded-xl shadow-lg flex flex-col md:flex-row">
           <!-- Description Section (Left side) -->
           <div class="w-full md:w-2/3 flex flex-col justify-center px-12">
             <div class="mb-4">
-              <h2 id="imageTitle" class="text-xl font-semibold text-gray-800">Proses Pengolahan</h2>
+              <h2 id="imageTitle" class="text-xl font-semibold text-gray-800">Produksi pertama</h2>
               <p id="imageDescription" class="text-gray-600 mt-2">
                 Proses pengolahan bahan organik menjadi pupuk yang berkualitas tinggi dan ramah lingkungan.
               </p>
@@ -1337,7 +1307,15 @@
         feather.replace();
       });
     </script>
+
+    <!-- animation aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- animation aos end -->
     <!-- script javascript -->
     <script src="src/script/home.js"></script>
+    <script src="src/script/slider-testi.js"></script>
   </body>
 </html>
