@@ -30,7 +30,7 @@ module.exports = {
       },
 
       width: {
-        '72': '80%',  // Menambahkan ukuran width 72
+        '8': '80%',  // Menambahkan ukuran width 72
       },
 
       // animations
