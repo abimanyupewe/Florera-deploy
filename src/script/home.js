@@ -223,7 +223,7 @@ function updateProductInfo(selectedProduct) {
   const pemakaianContent = document.getElementById("pemakaian-content");
 
   if (selectedProduct === "250ml") {
-    productImage.src = "../assets/images/products/Produk-250-ml.jpeg";
+    productImage.src = "src/assets/images/products/Produk-250-ml.jpeg";
     keunggulanContent.innerHTML = `
       <p class="py-2">1. Untuk Segala Jenis Tanaman (Bunga, Buah, dan Sayur).</p>
             <p class="py-2">2. TIDAK BERBAU dan Ramah Lingkungan. (100% ORGANIK)</p>
@@ -242,7 +242,7 @@ function updateProductInfo(selectedProduct) {
             <p class="py-2">5. Simpan ditempat kering dan jauhkan dari jangkauan anak-anak.</p>
     `;
   } else if (selectedProduct === "100ml") {
-    productImage.src = "../assets/images/products/Produk-100-ml.jpeg";
+    productImage.src = "src/assets/images/products/Produk-100-ml.jpeg";
     keunggulanContent.innerHTML = `
       <p class="py-2">1. Cocok untuk tanaman hias kecil.</p>
       <p class="py-2">2. Aman digunakan di dalam ruangan.</p>
