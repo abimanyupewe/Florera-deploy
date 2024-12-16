@@ -1,6 +1,7 @@
 .hidden { display: none; }
 .page { display: block; }
 
+/* nav */
 #hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translateY(8px);
   }
@@ -10,3 +11,13 @@
   #hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translateY(-8px);
   }
+
+  .active {
+    background-color: #166534; /* Warna hijau tua */
+    font-weight: bold;
+  }
+/* nav end */
+
+/* content */
+
+/* content end */

@@ -29,6 +29,10 @@ module.exports = {
         "2xl": "1320px", 
       },
 
+      width: {
+        '72': '80%',  // Menambahkan ukuran width 72
+      },
+
       // animations
       animation: {
         // "scale-in-out": "scaleInOut 100s ease-in-out infinite",

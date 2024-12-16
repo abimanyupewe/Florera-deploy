@@ -15,52 +15,78 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-gray-100 font-poppins">
+  <body class="bg-white font-poppins">
     <!-- Wrapper -->
     <div class="flex h-screen">
       <!-- Sidebar -->
       <div
         id="sidebar"
-        class="fixed top-0 left-0 w-64 h-full bg-green_gw text-white transform -translate-x-full transition-transform duration-300 md:relative md:translate-x-0 md:flex md:flex-col"
+        class="fixed top-0 z-10 left-0 w-64 h-full bg-green_gw text-white transform -translate-x-full transition-transform duration-300 md:relative md:translate-x-0 md:flex md:flex-col"
       >
-        <div class="p-4 font-bold text-lg">Florera Dashboard</div>
-        <ul>
+        <!-- Profil -->
+        <div class="p-4 flex items-center space-x-4 border-b border-slate-400">
+          <img
+            src="https://via.placeholder.com/50"
+            alt="Profile Picture"
+            class="w-12 h-12 rounded-full"
+          />
+          <div>
+            <p class="font-bold text-sm">Username</p>
+            <p class="text-xs text-green-200">email@gmail.com</p>
+          </div>
+        </div>
+
+        <ul class="flex flex-col justify-between flex-grow">
           <li
-            class="p-4 hover:bg-green-600 cursor-pointer"
-            onclick="showPage('dashboard')"
+            id="nav-dashboard"
+            class="p-4 hover:bg-green-800 cursor-pointer active"
+            onclick="setActiveNav('nav-dashboard'); showPage('dashboard')"
           >
             Dashboard
           </li>
           <li
-            class="p-4 hover:bg-green-600 cursor-pointer"
-            onclick="showPage('shop')"
+            id="nav-shop"
+            class="p-4 hover:bg-green-800 cursor-pointer"
+            onclick="setActiveNav('nav-shop'); showPage('shop')"
           >
             Shop
           </li>
           <li
-            class="p-4 hover:bg-green-600 cursor-pointer"
-            onclick="showPage('courses')"
+            id="nav-courses"
+            class="p-4 hover:bg-green-800 cursor-pointer"
+            onclick="setActiveNav('nav-courses'); showPage('courses')"
           >
             Kursus
+          </li>
+
+          <!-- Setelan berada di bagian bawah -->
+          <li
+            id="nav-settings"
+            class="p-4 hover:bg-green-800 cursor-pointer mt-auto"
+            onclick="setActiveNav('nav-settings'); showPage('settings')"
+          >
+            Setelan
           </li>
         </ul>
       </div>
 
       <!-- Main Content -->
-      <div class="flex-1">
+      <div class="flex-1 overflow-y-auto">
         <!-- Header -->
-        <div class="bg-white shadow p-4 flex justify-between items-center">
-          <h1 class="text-xl font-semibold">Dashboard</h1>
+        <div
+          class="bg-white shadow p-4 w-full md:w-72 fixed flex justify-between items-center"
+        >
+          <h1 class="text-xl font-medium">Florera</h1>
           <div class="flex space-x-4">
             <input
               type="text"
               placeholder="Cari..."
-              class="border w-28 md:w-auto rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-green_gw"
+              class="border w-28 md:w-auto rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-slate-100"
             />
             <button
               id="cart"
               class="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-100"
-              onclick="openCart()"
+              onclick="showPage('keranjang')"
             >
               <!-- Icon -->
               <svg
@@ -105,29 +131,165 @@
         </div>
 
         <!-- Content -->
-        <div class="p-4">
+        <div class="p-4 mt-20">
           <div id="content">
-            <div id="dashboard" class="page">Ini adalah halaman Dashboard</div>
-            <div id="shop" class="page hidden">
-              Ini adalah halaman Shop
-              <!-- Shop Section -->
-              <div id="shop" class="mb-8">
-                <h2 class="text-2xl font-bold mb-4">Shop</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <!-- Card -->
-                  <div class="bg-white shadow-md rounded-md p-4">
-                    <h3 class="font-bold">Produk 1</h3>
-                    <p class="text-gray-600">Deskripsi singkat produk.</p>
-                    <button
-                      class="mt-2 bg-green-700 text-white px-4 py-2 rounded-md"
-                    >
-                      Detail
-                    </button>
+            <!-- dashboard page -->
+            <div id="dashboard" class="page">
+              <div>
+                <!-- Welcome Banner -->
+                <div
+                  class="bg-green_gw text-white p-4 rounded-md shadow-md mb-6"
+                >
+                  <h2 class="text-xl md:text-2xl font-medium">Hai, User</h2>
+                  <p class="text-sm font-light md:text-base">
+                    Lihat perkembangan kursus dan promo terbaru di sini.
+                  </p>
+                </div>
+
+                <!-- Statistik Singkat -->
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6"
+                >
+                  <div
+                    class="bg-white border p-4 rounded-lg shadow-md text-center"
+                  >
+                    <h3 class="text-xl font-medium text-slate-500">
+                      Kursus Diikuti
+                    </h3>
+                    <p class="text-2xl text-green_gw font-bold">0</p>
                   </div>
-                  <!-- Tambahkan lebih banyak produk di sini -->
+                  <div
+                    class="bg-white border p-4 rounded-lg shadow-md text-center"
+                  >
+                    <h3 class="text-xl font-medium text-slate-500">Pesanan</h3>
+                    <p class="text-2xl text-green_gw font-bold">0</p>
+                  </div>
+                  <div
+                    class="bg-white border p-4 rounded-lg shadow-md text-center"
+                  >
+                    <h3 class="text-xl font-medium text-slate-500">
+                      Poin Reward
+                    </h3>
+                    <p class="text-2xl text-green_gw font-bold">0</p>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Promo Produk -->
+                  <div class="bg-green-100 p-4 rounded-md shadow-md">
+                    <h3 class="text-lg font-semibold mb-2">Promo Spesial</h3>
+                    <p class="text-gray-700">
+                      Diskon hingga 50% untuk produk Pupuk Organik!
+                    </p>
+                    <a href="#" class="text-green-500 font-bold hover:underline"
+                      >Belanja Sekarang</a
+                    >
+                  </div>
+
+                  <!-- Kursus Sedang Diikuti -->
+                  <div class="bg-white p-4 rounded-lg shadow-md border">
+                    <h3 class="text-xl font-medium text-slate-800 mb-4">
+                      Kursus Sedang Diikuti
+                    </h3>
+                    <p class="text-center text-slate-400">Belum ada data!</p>
+                  </div>
+                  <!-- <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Kursus Sedang Diikuti</h3>
+                    <ul class="space-y-2">
+                      <li class="flex items-center justify-between">
+                        <span>Pemangkasan Tanaman</span>
+                        <a href="#" class="text-green-500 hover:underline">Lanjutkan</a>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Merawat Tanaman Bunga</span>
+                        <a href="#" class="text-green-500 hover:underline">Lanjutkan</a>
+                      </li>
+                    </ul>
+                  </div> -->
                 </div>
               </div>
             </div>
+            <!-- shop page -->
+            <div id="shop" class="page hidden px-4">
+              <!-- Shop Section -->
+              <!-- Banner -->
+              <div
+                class="bg-green-800 text-white h-40 content-center p-6 rounded-md mb-6 text-center shadow-md"
+              >
+                <h2 class="text-xl md:text-2xl font-bold mb-2">
+                  Diskon Spesial 50%!
+                </h2>
+                <p class="text-base md:text-lg">
+                  Belanja sekarang dan nikmati diskon hingga 50% untuk semua
+                  produk.
+                </p>
+              </div>
+
+              <!-- Products -->
+              <div
+                id="products"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+              >
+                <!-- Product Card 1 -->
+                <div
+                  class="bg-white p-4 rounded-lg shadow-md w-full sm:w-64 md:w-72 cursor-pointer"
+                >
+                  <img
+                    src="../assets/images/products/Produk-250-ml.jpeg"
+                    alt="POC 250 ml"
+                    class="rounded-lg w-full h-48 sm:h-60 object-cover mb-4"
+                  />
+                  <h3 class="text-lg sm:text-xl font-semibold">
+                    Nutrigrow Spray
+                  </h3>
+                  <p class="text-gray-600 mt-2 text-sm sm:text-base">
+                    Pupuk Organik Cair Nutrigrow 250 ml.
+                  </p>
+                  <p
+                    class="text-green-500 font-semibold mt-2 text-base sm:text-lg"
+                  >
+                    Rp 15.000
+                  </p>
+                  <!-- Add to Cart Button -->
+                  <button
+                    class="w-full mt-4 bg-green_gw text-white py-2 rounded-lg hover:bg-green-800 transition text-sm sm:text-base"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div
+                  class="bg-white p-4 rounded-lg shadow-md w-full sm:w-64 md:w-72 cursor-pointer"
+                >
+                  <img
+                    src="../assets/images/products/Produk-100-ml.jpeg"
+                    alt="POC 100 ml"
+                    class="rounded-lg w-full h-48 sm:h-60 object-cover mb-4"
+                  />
+                  <h3 class="text-lg sm:text-xl font-semibold">
+                    Nutrigrow Pure
+                  </h3>
+                  <p class="text-gray-600 mt-2 text-sm sm:text-base">
+                    Pupuk Organik Cair Nutrigrow 100 ml.
+                  </p>
+                  <p
+                    class="text-green-500 font-semibold mt-2 text-base sm:text-lg"
+                  >
+                    Rp 25.000
+                  </p>
+                  <!-- Add to Cart Button -->
+                  <button
+                    class="w-full mt-4 bg-green_gw text-white py-2 rounded-lg hover:bg-green-800 transition text-sm sm:text-base"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- shop page end -->
+
+            <!-- kursus page -->
             <div id="courses" class="page hidden">
               Ini adalah halaman Kursus
               <!-- Kursus Section -->
@@ -148,6 +310,14 @@
                 </div>
               </div>
             </div>
+            <!-- kursus page end -->
+
+            <!-- keranjang page -->
+            <div id="keranjang" class="page hidden">
+              Ini adalah halaman keranjang
+              <!-- Kursus Section -->
+            </div>
+            <!-- keranjang page end -->
           </div>
         </div>
       </div>
