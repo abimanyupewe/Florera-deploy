@@ -54,38 +54,78 @@ document.addEventListener("alpine:init", () => {
       // this.items.push(newItem); // memasukkan data produk
       // this.quantity++; // untuk total produk
       // this.total += newItem.price; // menjumlahkan harga setiap produk yang dipilih
-
     },
 
     // remove btn
     remove(id) {
-        // ambil item yang mau diremove berdasarkan id
-        const cartItem = this.items.find((item) => item.id === id);
+      // ambil item yang mau diremove berdasarkan id
+      const cartItem = this.items.find((item) => item.id === id);
 
-        // jika item lebih dari 1
-        if(cartItem.quantity > 1) {
-            // telusuri satu persatu
-            this.items = this.items.map((item) => {
-                // jika bukan barang yang dipilih
-                if(item.id !== id) {
-                    return item;
-                } else {
-                    item.quantity--;
-                    item.total = item.price * item.quantity;
-                    this.quantity--;
-                    this.total -= item.price;
-                    return item;
-                }
-            });
-        } else if (cartItem.quantity === 1) {
-            // jika barang sisa 1
-            this.items = this.items.filter((item) => item.id != id);
+      // jika item lebih dari 1
+      if (cartItem.quantity > 1) {
+        // telusuri satu persatu
+        this.items = this.items.map((item) => {
+          // jika bukan barang yang dipilih
+          if (item.id !== id) {
+            return item;
+          } else {
+            item.quantity--;
+            item.total = item.price * item.quantity;
             this.quantity--;
-            this.total -= cartItem.price;
-        }
-    }
+            this.total -= item.price;
+            return item;
+          }
+        });
+      } else if (cartItem.quantity === 1) {
+        // jika barang sisa 1
+        this.items = this.items.filter((item) => item.id != id);
+        this.quantity--;
+        this.total -= cartItem.price;
+      }
+    },
   });
 });
+
+// form konfirmasi
+const checkoutButton = document.querySelector(".checkout-button");
+checkoutButton.disabled = true; // agar btn disabled
+
+const form = document.querySelector("#checkoutForm");
+form.addEventListener("keyup", function () {
+  for (let i = 0; i < form.elements.length; i++) {
+    if (form.elements[i].value.length !== 0) {
+      checkoutButton.classList.remove("disabled");
+      checkoutButton.classList.add("disabled");
+    } else {
+      return false;
+    }
+  }
+  checkoutButton.disabled = false;
+  checkoutButton.classList.remove("disabled");
+});
+
+// kirim data dengan btn
+checkoutButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  const formData = new FormData(form); // ambil dari form
+  const data = new URLSearchParams(formData);
+  const objData = Object.fromEntries(data);
+  const message = formatDataMessage(objData);
+  window.open("http://wa.me/6285643124688?text=" + encodeURIComponent(message));
+});
+
+// untuk mengirim lewat wa
+const formatDataMessage = (obj) => {
+  return `Data Customer \n
+   Nama : ${obj.nama}
+   No Whatsapp : ${obj.whatsapp}
+   ALamat : ${obj.alamat} \n
+Data Orderan \n
+  ${JSON.parse(obj.items).map(
+    (item) => `${item.name} (${item.quantity} x ${rupiah(item.total)}) \n`
+  )}
+  Total pembayaran : ${rupiah(obj.total)}`;
+};
 
 // konversi ke rupiah
 const rupiah = (number) => {

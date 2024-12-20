@@ -376,11 +376,19 @@
                 </div>
 
                 <!-- Form Container -->
-                <div class="bg-white shadow-md rounded-lg p-6">
+                <div
+                  x-show="$store.cart.items.length"
+                  class="bg-white form-container shadow-md rounded-lg p-6"
+                >
                   <h2 class="text-xl font-bold text-gray-800 mb-4">
                     Informasi Pembeli
                   </h2>
-                  <form @submit.prevent="$store.cart.checkout">
+                  <form
+                    @submit.prevent="$store.cart.checkout"
+                    id="checkoutForm"
+                  >
+                  <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)">
+                  <input type="hidden" name="total" x-model="$store.cart.total">
                     <!-- Nama -->
                     <div class="mb-4">
                       <label
@@ -391,7 +399,8 @@
                       <input
                         type="text"
                         id="nama"
-                        x-model="$store.cart.customer.name"
+                        name="nama"
+                        autocomplete="off"
                         placeholder="Masukkan nama"
                         class="w-full mt-1 px-4 py-2 border rounded-lg text-gray-800 focus:ring-green-500 focus:border-green-500"
                       />
@@ -404,9 +413,10 @@
                         >Nomor WhatsApp</label
                       >
                       <input
-                        type="tel"
+                        type="number"
                         id="whatsapp"
-                        x-model="$store.cart.customer.whatsapp"
+                        name="whatsapp"
+                        autocomplete="off"
                         placeholder="Masukkan nomor WA"
                         class="w-full mt-1 px-4 py-2 border rounded-lg text-gray-800 focus:ring-green-500 focus:border-green-500"
                       />
@@ -420,7 +430,7 @@
                       >
                       <textarea
                         id="alamat"
-                        x-model="$store.cart.customer.address"
+                        name="alamat"
                         placeholder="Masukkan alamat"
                         rows="4"
                         class="w-full mt-1 px-4 py-2 border rounded-lg text-gray-800 focus:ring-green-500 focus:border-green-500"
@@ -429,7 +439,9 @@
                     <!-- Submit Button -->
                     <button
                       type="submit"
-                      class="w-full py-2 px-4 bg-green_gw text-white font-semibold rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                      id="checkout-button"
+                      value="chackout"
+                      class="w-full checkout-button disabled py-2 px-4 bg-green_gw text-white font-semibold rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                     >
                       Checkout
                     </button>
