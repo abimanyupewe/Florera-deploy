@@ -713,6 +713,16 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -962,6 +972,10 @@ video {
 }
 
 .w-full {
+  width: 100%;
+}
+
+.w-\[100\%\] {
   width: 100%;
 }
 
@@ -2054,6 +2068,11 @@ video {
   .md\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .md\:mt-0 {
