@@ -18,6 +18,7 @@
   }
 /* nav end */
 
-/* content */
-
-/* content end */
+.form-container .checkout-button.disabled{
+  background-color: #999;
+  cursor: not-allowed;
+}
