@@ -86,65 +86,6 @@ document.addEventListener("alpine:init", () => {
   });
 });
 
-// form konfirmasi
-const checkoutButton = document.querySelector(".checkout-button");
-checkoutButton.disabled = true; // agar btn disabled
-
-const form = document.querySelector("#checkoutForm");
-form.addEventListener("keyup", function () {
-  for (let i = 0; i < form.elements.length; i++) {
-    if (form.elements[i].value.length !== 0) {
-      checkoutButton.classList.remove("disabled");
-      checkoutButton.classList.add("disabled");
-    } else {
-      return false;
-    }
-  }
-  checkoutButton.disabled = false;
-  checkoutButton.classList.remove("disabled");
-});
-
-// kirim data dengan btn
-checkoutButton.addEventListener("click", async function (e) {
-  e.preventDefault();
-  const formData = new FormData(form); // ambil dari form
-  const data = new URLSearchParams(formData);
-  const objData = Object.fromEntries(data);
-  // const message = formatDataMessage(objData);
-  // window.open("http://wa.me/6281996719560?text=" + encodeURIComponent(message));
-
-  // buat payment
-  // meminta token transaksi dengan ajax / fetch
-  try {
-    const response = await fetch("../../php/order.php", {
-      method: "POST",
-      body: data,
-    });
-
-    const token = await response.text();
-    // console.log(token);
-    // menampilkan pop up payment
-    window.snap.pay(token);
-  } catch (err) {
-    console.log(err.message);
-  }
-});
-
-// untuk mengirim lewat wa
-const formatDataMessage = (obj) => {
-  return `Data Customer \n
-   Nama : ${obj.nama}
-   No Whatsapp : ${obj.whatsapp}
-   ALamat : ${obj.alamat}
-   Kota : ${obj.koda}
-   Kode pos : ${obj.kode_pos} \n
-Data Orderan \n
-  ${JSON.parse(obj.items).map(
-    (item) => `${item.name} (${item.quantity} x ${rupiah(item.total)}) \n`
-  )}
-  Total pembayaran : ${rupiah(obj.total)}`;
-};
-
 // konversi ke rupiah
 const rupiah = (number) => {
   return new Intl.NumberFormat("id-ID", {

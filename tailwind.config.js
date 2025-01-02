@@ -3,8 +3,9 @@ module.exports = {
   content: [
     // './home/**/*.{home.html}', // ini untuk menghubungkan semua file HTML di dalam folder home
     // './src/**/*.html',  // jika ada file HTML di folder src
-    'src/pages/home/tentang-produk.html',
     'src/pages/dashboard.html',
+    'src/pages/Authentication/login.html',
+    'src/pages/Authentication/register.html',
     'index.html'
   ],
   theme: {
@@ -30,7 +31,8 @@ module.exports = {
       },
 
       width: {
-        '8': '80%',  // Menambahkan ukuran width 72
+        '8': '80%',  // Menambahkan ukuran width
+        '1/12' : '1000px'
       },
 
       // animations
