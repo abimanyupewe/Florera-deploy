@@ -217,6 +217,7 @@ function toggleAccordion(element) {
   }
 }
 // arrcordion produk end
+
 function updateProductInfo(selectedProduct) {
   const productImage = document.getElementById("product-image");
   const keunggulanContent = document.getElementById("keunggulan-content");

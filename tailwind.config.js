@@ -4,6 +4,7 @@ module.exports = {
     // './home/**/*.{home.html}', // ini untuk menghubungkan semua file HTML di dalam folder home
     // './src/**/*.html',  // jika ada file HTML di folder src
     'src/pages/dashboard.html',
+    'src/pages/Course/course.html',
     'src/pages/Authentication/login.html',
     'src/pages/Authentication/register.html',
     'index.html'
